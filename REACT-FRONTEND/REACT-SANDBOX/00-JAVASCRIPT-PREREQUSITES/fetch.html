@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Call</title>
+</head>
+
+<body>
+    <h1>Fetch API Call</h1>
+
+    <div id="countriesContainer"></div>
+    <script>
+        let url = 'https://restcountries.com/v3.1/name/uk';
+        fetch(url)
+            .then(response => response.json())
+            .then(data => console.log(data));
+
+
+        
+        // RETRIEVE INFORMATION FROM THE API
+         const geCountryData = function (country) {
+            fetch(`https://restcountries.com/v3.1/name/${country}`)
+                .then(response =>  response.json())
+                .then(data => console.log(data))
+                .then(data => console.log(data[0]));
+        }
+        // THIS WILL LIST API INFORMATION ON THE WEBPAGE
+        const renderCountry = function (data){
+        // SETUP API DATA 
+          const flag = data.flags.png;
+        const name = data.name.common;
+        const region = data.region;
+        const population = data.population.toLocaleString();
+        const language = Object.values(data.languages)[0];
+        const currrency = Object.values(data.currencies)[0].name;
+         
+        //Fill the teplate with real data
+        let html = `
+        <article class="country">
+        <img class="country__img" src="${flag}" alt="Flag of ${name}"/>
+        <div class="country__data">
+            <h3 class="country__name">${name}</h3>
+            <h4 class="country__region">${region}</h4>
+            <p class="country__row"><span>🧑‍🤝‍🧑</span>${population}</p>
+            <p class="country__row"><span>🗣️</span>${language}</p>
+         </div>
+    </article>
+                `;
+                let countriesContainer = document.getElementById("countriesContainer");
+                countriesContainer.insertAdjacentHTML('beforeend', html)
+       }
+        geCountryData('uk')
+    </script>
+
+</body>
+
+</html>
