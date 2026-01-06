@@ -1,0 +1,289 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexcent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .nav {
+            width: 100%;
+            height: 80px;
+            background: #F5F7FA;
+        }
+
+        .container {
+            width: 80%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .routes {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .call_to_action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .routes-mobile {
+            display: none;
+        }
+
+        .call_to_action-mobile {
+            display: none;
+        }
+
+        .login, .register {
+            padding: 10px;
+        }
+
+        .login {
+            background-color: white;
+            color: #4CAF50;
+            border: none;
+            cursor: pointer;
+        }
+
+        nav .menu {
+            display: none;
+        }
+
+        .register {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hero {
+            width: 100%;
+            height: calc(100vh - 80px);
+            background: #F5F7FA;
+        }
+
+        .text_section h1 {
+            font-size: 80px;
+        }
+
+        .hero h1 {
+            margin-bottom: 20px;
+        }
+
+        .hero_text {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .hero_register {
+            height: 50px;
+            width: 120px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .clients {
+            width: 100%;
+            height: auto;
+        }
+
+        .clients .wrapper {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .clients .logos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 40px;
+            column-gap: 20px;
+        }
+
+        @media (max-width: 500px) {
+            .nav {
+                height: max-content;
+            }
+
+            /* .nav .menu {
+                display: block
+            } */
+            .menu{
+                position: relative;
+                right: 70px;
+                left: 70px;
+                bottom: 20px;
+                cursor:pointer;
+                padding-bottom: 10px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .container {
+                display: block;
+            }
+
+            .logo{
+                padding-top: 50px;
+             }
+            .routes {
+                display: none;
+            }
+
+            .call_to_action {
+                display: none;
+            }
+
+            .routes-mobile {
+                /* display: flex;
+                justify-content: space-between; */
+                display: block;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            .call_to_action-mobile {
+                display: flex;
+            }
+
+            .routes-mobile nav {
+                padding: 3px;
+            }
+
+            .container .routes-mobile nav:hover {
+                background-color: #4CAF50;
+            }
+
+            .container-mobile .nav .menu {
+                display: none;
+            }
+
+            .nav .display-none {
+                display: none;
+            }
+
+            .nav .menu .hamburger {
+                margin-left: 250px;
+                background-color: black;
+                width: 90%;
+                height: 10%;
+                margin-bottom: 4px;
+             }
+             .nav .container-mobile{
+                position: relative;
+                display: block;
+
+                width: 80%;
+                margin: auto;
+                top: -340px;
+                animation: menu 1.5x ease-in;
+             }
+            
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- navbar -->
+
+    <div class="nav">
+        <div class="container">
+            <div class="logo">
+                <img src="./images/Nexcent/logo.png" alt="">
+            </div>
+
+            <div id="menu" class="menu">
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+            </div>
+
+            <div class="routes">
+                <nav>Home</nav>
+                <nav>Service</nav>
+                <nav>Feature</nav>
+                <nav>Product</nav>
+                <nav>Testimonial</nav>
+                <nav>FAQ</nav>
+            </div>
+
+            <div class="call_to_action">
+                <button class="login">Login</button>
+                <button class="register">Register</button>
+            </div>
+
+        </div>
+        <div id="container-mobile" class="container-mobile display-none">
+            <div class="routes-mobile">
+                <nav>Home</nav>
+                <nav>Service</nav>
+                <nav>Feature</nav>
+                <nav>Product</nav>
+                <nav>Testimonial </nav>
+                <nav>FAQ </nav>
+            </div>
+
+            <div class="call_to_action-mobile">
+                <button class="login">Login</button>
+                <button class="register">Register</button>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="text_section">
+                <h1>
+                    Lessons and insights <br><span style="color: #4CAF50;">from 8 years</span>
+                </h1>
+                <p class="hero_text">Where to grow your business as a photographer, site or social media</p>
+
+                <button class="hero_register">Register</button>
+            </div>
+            <div class="image">
+                <img src="./images/Nexcent/Illustration.png" alt="">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+   
+</script>
+<script> document.getElementById('menu').addEventListener('click', toggleMenu);
+    function toggleMenu(e) {
+        var container = document.getElementById('container-mobile');
+        container.classList.toggle('display-none')
+    }</script>
+
+</html>

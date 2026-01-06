@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            height: 50.8px;
+            background-color: white;
+            padding-bottom: 50px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4e4c4c;
+            margin-left: 40px;
+            font-size: 14px;
+            font: bolder;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        a:hover {
+            color: rgba(207, 46, 6, 0.925);
+        }
+
+        .hero {
+            display: flex;
+            justify-content: space-evenly;
+            background-color: black;
+        }
+
+        .hero h1 {
+            margin-left: 40px;
+            margin-top: 30%;
+            font-size: 70px;
+        }
+
+        span {
+            margin-left: 20px;
+        }
+
+        .hero button {
+            background-color: white;
+            color: black;
+            font-size: 15px;
+            padding: 10px 20px 10px 20px;
+            margin-left: 154px;
+            margin-top: 89px;
+            cursor: pointer;
+        }
+
+        .hero button:hover {
+            background-color: black;
+            color: white;
+            border-color: white;
+            transition: 0.3s;
+        }
+
+        .hero-image {
+            margin-top: 30px;
+        }
+
+        .bottom {
+            background-color: white;
+            height: 750px;
+            width: 100%;
+        }
+
+        .BESPOKE {
+            margin-left: 150px;
+            padding: 60px 30px 65px 30px;
+            width: 890px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .wed {
+            display: flex;
+            margin-left: 20px;
+            margin-right: -20px;
+          margin: 20px 0 0 30px;
+        }
+
+        .wed img {
+            width: 20em;  
+         }
+
+        .wed-click {
+            background-color: white;
+            color: black;
+            font-size: 15px;
+            padding: 10px 24px 10px 24px;
+            margin-left: 114px;
+            margin-top: 30px;
+            cursor: pointer;
+            
+        }
+
+        .wed-click:hover {
+            background-color: black;
+            color: white;
+            transition: 0.3s;
+        }
+
+        footer {
+            height: 90px;
+            display: flex;
+            background-color: black;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer a,h3 {
+            color: aliceblue;
+        }
+
+        .foot-end {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .phone{
+            display: none;
+        }
+        .wed-phone{
+            display: none;
+        }
+        .hanger-phone{
+            display: none;
+        }
+        .hero-click-phone{
+            display: none;
+        }
+
+        @media (max-width: 500px) {
+            .logo {               
+                margin-top: 5px;
+                margin-left: 10px;
+            }
+
+            .alin {
+                display: none;
+            }
+
+            nav {
+                  height: 20px;
+                width: 465px;
+            }
+
+            .hero {
+                width: 465px;
+                height: 29em;
+            }
+
+            .hero h1 {
+                margin-left: 10px;
+                margin-top: 360px;
+                font-size: 30px;
+            }
+
+            .hero-click {
+                display: none;
+            }
+
+            .hero-image {
+                display: none;
+            }
+
+            .ext {
+                display: block;
+                padding: 10px 20px 10px 20px;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                margin-left: 30px;
+
+            }
+
+            .hero-click-phone {
+                display: block;
+                padding: 10px 20px 10px 20px;
+                cursor: pointer;
+                background-color: white;
+                color: black;
+                margin-left: 90px;
+
+                border-color: black;
+            }
+
+            .hanger {
+                display: none;
+            }
+
+            .hanger-phone {
+                display: block;
+                width: 465px;
+                margin: 20px 20px 20px 20;
+            }
+
+            .BESPOKE {
+                text-align: center;
+                font-size: 10px;
+                width: 27em;
+                margin-left: 70px;
+             }
+
+            .wed {
+                display: none;
+            }
+
+            .wed-phone {
+                display: block;
+                width: 465px;
+            }
+
+            .wed-click {
+                margin-top: 30px;
+                margin-left: 190px;
+            }
+
+            footer {
+                display: none;
+            }
+            .bottom{
+                height: 60em;
+            }
+
+            .phone {
+                height: 20em;
+                display: flex;
+                flex-direction: column;
+                background-color: black;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo"><img src="images/vkijam/veekeejames.png" alt=""></div>
+        <div class="alin">
+            <a class="alin" href="">HOME</a>
+            <a class="alin" href="">BRIDES</a>
+            <a class="alin" href="">NON BRIDALS</a>
+            <a class="alin" href="">ABOUT US</a>
+            <a class="alin" href="">MAKE AN ENQUIRY</a>
+        </div>
+    </nav>
+    <div class="hero">
+        <div class="hero-text">
+            <h1 style="color: antiquewhite;"> <span>THE GUTSY</span> <br> COLLECTION</h1>
+            <div class="hero-click">
+                <button style="border-width: 1px;">VIEW COLLECTION</button>
+            </div>
+        </div>
+        <DIv class="hero-image"> <img src="images/vkijam/viki hero.png" alt=""></DIv>
+    </div>
+    <div class="ext">
+        <button class="hero-click-phone" style="border-width: 1.3px;">VIEW COLLECTION</button>
+    </div>
+    <div class="hanger-phone"><img class="hanger-phone" src="images/vkijam/hanger-phone.png" alt=""></div>
+    <div class="hanger"><img style="width: 100%;" src="images/vkijam/hanger.png" alt="" sizes="" srcset=""></div>
+
+    <div class="bottom">
+        <div class="BESPOKE">
+            <h1>BESPOKE WEARS FOR ANY OCCASION</h1>
+        </div>
+        <div class="wed">
+                <img src="images/vkijam/weddin2.png" alt="">
+                <img src="images/vkijam/weddin1.png" alt="">
+                <img src="images/vkijam/weddin4.png" alt="">
+                <img src="images/vkijam/weddin3.png" alt="">
+            </div>
+        
+        <img class="wed-phone" src="images/vkijam/phon-bottom.png" alt="">
+        <button class="wed-click" style="border-width: 1px;">VIEW MORE</button>
+    </div>
+    <div>
+    </div>
+    <footer>
+        <div>
+            <a href="">About Us</a>
+            <a href="">Bridal Collection</a>
+            <a href="">Book an Appointment</a>
+            <a href="">Make an Enquiry </a>
+            <a href="">Contact Us</a>
+        </div>
+        <div class="foot-end">
+            <h3>© 2023 Veekee James</h3>
+            <a href="">Instagram</a>
+            <a href="">Whattsapp</a>
+        </div>
+    </footer>
+    <footer>
+       <div class="phone"> 
+        <a href="">About Us</a>
+        <a href="">Bridal Collection</a>
+           <a href="">Book an Appointment</a>
+           <a href="">Make an Enquiry</a>
+           <a href="">Contact Us</a>
+        </div>
+   
+    </footer>
+</body>
+
+</html>
