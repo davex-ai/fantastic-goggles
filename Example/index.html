@@ -1,0 +1,85 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIIT MANAGEMENT SOFTWARE</title>
+    <style>
+        .containerss {
+    max-width: 1000px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #4CAF50;
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], input[type="number"], select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* General button styling */
+button, input[type="submit"] {
+background-color: #4CAF50; /* Green background */
+color: white;
+width: auto; /* Flexible width */
+min-width: 100px;
+max-width: 180px;
+padding: 8px 16px;
+border: none;
+border-radius: 5px;
+font-size: 14px;
+cursor: pointer;
+transition: background-color 0.3s ease, box-shadow 0.3s ease;
+margin-top: 10px; /* Space at the top */
+
+}
+    </style>
+   
+</head>
+<body>
+    <h1>Employee Management</h1>
+
+    <!-- form to add a new employee -->
+     <div id="add-form-container" class="containerss">
+        <h2>Add New Employee</h2>
+        <form id="add-employee-form">
+            <label for="add-name">Name:</label>
+            <input type="text" id="add-name" required>
+            <label for="add-age">Age:</label>
+            <input type="number" id="add-age" required>
+            <label for="add-Course">Course:</label>
+            <input type="text" id="add-course" required>
+            <label for="add-address">Address:</label>
+            <input type="text" id="add-address" required>
+            <label for="add-gender">Gender:</label>
+            <input type="text" id="add-gender" required>
+            <label for="add-mobile">Mobile No:</label>
+            <input type="number" id="add-mobile" required>
+            <button type="submit">Add Students</button>
+
+        </form>
+     </div>
+    <script src="/js/script.js"></script>
+</body>
+</html> 

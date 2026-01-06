@@ -1,0 +1,82 @@
+                                                        //Database management system
+
+//1️⃣Load the driver modules
+const MongoClient = require('mongodb').MongoClient;
+//2️⃣ Define the server
+const server = 'mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.1';
+//Creat a client
+const mongo = new MongoClient(server);
+//Connect to the server
+async function connectToDB() {
+    try {
+        console.log('Connecting to Database...');
+        await mongo.connect(); // Wait for the connection to establish
+        console.log('Connected to Database');
+        // 3️⃣ Specify the database and collection
+        const database = mongo.db('Market');
+        const customerCollection = database.collection('Customer');
+        const salesCollection = database.collection('Sales')
+        //Fetch all movies and Limit the Output
+                  // 4️⃣ Fetch documsent
+        // var filter = {customerName:{$regex:'^P'}};
+        const criteria = {id : 2 };
+        const update = {
+        $set: { Address : "No 43, Straw Hat Pirates" },     // Set/Update a field
+        $rename: { "customer_id": "custID" },        // Rename a field
+        $push: { skills: "Haki" },               // Add a value to an array
+        $pop: { skills: -1 },                    // Remove first value from array (-1 for first, 1 for last)
+        $addToSet: { role: "customer" },     // Add to array only if not already present
+        $inc: { Visits : 10 }                // Increment a numeric field
+    };
+        const result = await collection.updateOne(criteria, update);
+        // const insert = await customerCollection.insertMany([{_id:11,custID:'C003',customerName:'Mason',Address:'114, Funsho Williams Avenue',phoneNumber:'09088675564',transDate:new Date('')},]);
+     console.log(`${result.modifiedCount} document(s) updated`);
+        // console.log(insert);
+        
+     //    const update = await customerCollection.updateOne({custID:'C003'},{$set:{payAmount:4000}});
+     //    console.log(update);
+     //    const marketSearch = await customerCollection.find().limit(10).toArray();
+     //    console.log("Customers found: ", marketSearch)
+     //   const deleteDoc = await customerCollection.deleteOne({custID:'C003'});
+       // console.log(deleteDoc);
+    } catch (err) {
+        console.error('❌ Error fetching customer:', err);
+    } finally {
+     // 8️⃣ Close the connection
+        await mongo.close(); // Ensure the connection is closed properly
+        console.log('Connection closed');
+    }
+}
+// Run the function
+connectToDB();
+updateDocument();
+
+
+//find operation(specific) javascript
+//  insert two documenteach
+// therefore performing any find operation
+// connect shell to atlas maret pharmacy store product school
+//filter on shell 
+// create a constant,await,collectionname,update,criteria,set/rename/push/pop/addtoset/inc close
+
+// 🔥 What’s Happening Here:
+//  const — Declares the MongoDB client as a constant.
+//  await — Ensures MongoDB connects properly before continuing.
+// 3️⃣ Database and collection setup — Defines the database (myDatabase) and collection (myCollection).
+// 4️⃣ Criteria — Searches for a document where username is "Luffy".
+// 5️⃣ Update operations:
+
+// $set — Adds or updates the field crew.
+// $rename — Renames captain to leader.
+// $push — Appends "Haki" to skills array.
+// $pop — Removes the first item in the skills array (-1), or last item if you set 1.
+// $addToSet — Adds "Blackbeard" to rivals array, only if it’s not already there (prevents duplicates).
+// $inc — Increases the bounty by 1,000,000 (you can use negative numbers to decrease).
+// 6️⃣ updateOne() — Runs the update on a matching document.
+// 7️⃣ Error handling — Catches errors and logs them.
+// 8️⃣ client.close() — Closes the database connection properly.
+
+
+
+
+

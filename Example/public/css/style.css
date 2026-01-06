@@ -1,0 +1,88 @@
+.containerss {
+    max-width: 1000px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #4CAF50;
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], input[type="number"], select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* General button styling */
+button, input[type="submit"] {
+background-color: #4CAF50; /* Green background */
+color: white;
+width: auto; /* Flexible width */
+min-width: 100px;
+max-width: 180px;
+padding: 8px 16px;
+border: none;
+border-radius: 5px;
+font-size: 14px;
+cursor: pointer;
+transition: background-color 0.3s ease, box-shadow 0.3s ease;
+margin-top: 10px; /* Space at the top */
+
+}
+/* Employee list styling */
+#student-list {
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+.student-item {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.student-item strong {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.student-item button {
+    background-color: #dc3545;
+}
+
+.student-item button.edit-button {
+    background-color: #ffc107;
+    margin-right: 10px;
+    
+}
+
+.student-item button.edit-button:hover {
+    background-color: #e0a800;
+}
+
+.student-item button:hover {
+    background-color: #c82333;
+}

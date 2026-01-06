@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data Submission</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="add-form-container">
+        <h2>Add New Student</h2>
+        <form id="add-student-form">
+            <label for="add-name">Name:</label>
+            <input type="text" id="add-name">
+            <label for="add-age">Age:</label>
+            <input type="number" id="add-age">
+            <label for="add-gender">Gender:</label>
+            <select id="add-gender" name="add-gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <label for="add-email">Email:</label>
+            <input type="email" id="add-email">
+            <label for="add-phoneNo">Phone Number:</label>
+            <input type="text" id="add-phone">
+            <label for="add-address">Address:</label>
+            <input type="text" id="add-address">
+            <label for="add-course">Course:</label>
+            <select id="add-course" name="add-course">
+                <option value="MMS">MMS</option>
+                <option value="CyberSecurity">CyberSecurity</option>
+                <option value="Digital Marketting">Digital Marketting</option>
+            </select>
+            <button type="submit">Add Student</button>
+
+        </form>
+    
+    </div>
+    <h2>Display Student Data</h2>
+<div id="student-list">
+
+</div>
+    <script src="/js/script.js"></script>
+
+    
+</body>
+</html>
