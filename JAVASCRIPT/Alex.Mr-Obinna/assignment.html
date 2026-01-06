@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body id="body">
+    <h2>Change Color</h2>
+    <Button onclick="change()">Change Background</Button> <br>
+    <script>
+        function change() {
+            document.body.style.backgroundColor = document.body.style.backgroundColor === 'black' ? 'white' : 'black'
+        }
+    </script>
+
+     <h2>Class Attendance</h2>
+    <input type="text" id="name" placeholder="Enter a Name">
+    <button onclick="greet()">Add Student</button>
+    <h1 id="talk"></h1>
+
+    <script>
+        function greet(){
+            let name = document.getElementById('name').value
+
+            // if(name.trim() === "") return
+
+            let th =document.createElement('th')
+            th.innerText = `Hi ${name}`
+            document.getElementById('talk').appendChild(th)
+            document.getElementById('name').value = ""
+        }
+    </script>
+</body>
+
+</html>

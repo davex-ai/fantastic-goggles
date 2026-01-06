@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #111, #222, #333);
+            margin: 3rem auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #preview {
+            background: linear-gradient(to bottom right, #0f0f0f, #1a1a1a);
+            min-height: 120px;
+            color: #4df7ff;
+            font-size: 40px;
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            box-shadow: inset 0 0 12px rgba(0, 255, 255, 0.3);
+            margin-bottom: 20px; 
+            overflow: hidden;
+            
+            white-space: nowrap;
+            border-right: 3px solid black;
+            animation: blink 2s steps(2, start) infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                border-right-color: transparent;
+            }
+        }
+
+        .hea {
+            background: linear-gradient(135deg, #141414, #212121);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+            width: 90%;
+            max-width: 600px;
+        }
+
+        #buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .row1 {
+            display: flex;
+            gap: 15px;
+        }
+
+        .row1 button {
+            color: white;
+            background: linear-gradient(to bottom right, #2e2e2e, #3a3a3a);
+            border: none;
+            padding: 15px;
+            min-width: 75px;
+            min-height: 60px;
+            border-radius: 8px;
+            font-size: 18px;
+            transition: all 0.15s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(to bottom right, #00f0ff, #007a89);
+            cursor: pointer;
+            transform: translateY(-3px);
+        }
+
+        /* .sb{
+            width: 160px;
+        } */
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, #00eaff, transparent);
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hea">
+        <div id="preview"></div>
+        <hr>
+        <div id="buttons">
+            <div class="row1">
+                <!-- <button class="sb" type="button">sin</button> -->
+                <button type="button">exp</button>
+                <button type="button">C</button>
+                <button type="button">√</button>
+                 <button type="button">^</button>
+            </div>
+            <div class="row1">
+                <!-- <button class="sb" type="button">cos</button> -->
+                <button type="button">x²</button>
+                <button type="button">x³</button>
+                <button type="button">%</button>
+                <button type="button">⌫</button>
+            </div>
+            <div class="row1">
+                <button class="sb" type="button">tan</button>
+                <button type="button">π</button>
+                <button type="button">e</button>
+                <button type="button">÷</button>
+            </div>
+            <div class="row1">
+                <!-- <button type="button">log</button> -->
+                <button type="button">7</button>
+                <button type="button">8</button>
+                <button type="button">9</button>
+                <button type="button">x</button>
+            </div>
+            <div class="row1">
+                <button type="button">4</button>
+                <button type="button">5</button>
+                <button type="button">6</button>
+                <button type="button">+</button>
+            </div>
+            <div class="row1">
+                <button type="button">1</button>
+                <button type="button">2</button>
+                <button type="button">3</button>
+                <button type="button">-</button>
+            </div>
+            <div class="row1">
+                <!-- <button type="button">mod</button> -->
+                <button type="button">In</button>
+                <button type="button">0</button>
+                <button type="button">.</button>
+                <button type="button">=</button>
+            </div>
+        </div>
+        <script>
+
+            function getLastNumber() {
+                const lastOperatorIndex = Math.max(
+                    currentExpression.lastIndexOf('+'),
+                    currentExpression.lastIndexOf('-'),
+                    currentExpression.lastIndexOf('×'),
+                    currentExpression.lastIndexOf('÷'),
+                    currentExpression.lastIndexOf('^')
+                );
+
+                return currentExpression.slice(lastOperatorIndex + 1);
+            }
+
+
+            let currentExpression = ""
+            const preview = document.getElementById('preview')
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const value = e.target.textContent
+                    if (value === 'C') {
+                        currentExpression = ""
+                        preview.textContent = ""
+                        return
+                    }
+
+                    const operators = ['+', '-', '×', '÷', '^', '%'];
+
+                    if (operators.includes(value) && operators.includes(currentExpression.slice(-1))) {
+                        return; // ignore if last char is also an operator
+                    }
+
+
+                    if (value === '⌫') {
+                        currentExpression = currentExpression.slice(0, -1)
+                        preview.textContent = currentExpression;
+                        return;
+                    }
+                    if (value === '=') {
+                        try {
+                            currentExpression = eval(currentExpression.replace('x', '*').replace('÷', '/').replace('^', '**').replace('mod', '%').replace('e', Math.E));
+                            preview.textContent = currentExpression;
+                        } catch {
+                            preview.textContent = "Error";
+                        }
+                        return;
+                    }
+
+                    if (value === '.') {
+                        
+                        const lastNumber = currentExpression.slice(getLastNumber(currentExpression) + 1);
+
+                        if (lastNumber.includes('.')) {
+                            return; 
+                        }
+                    }
+
+
+                    if (currentExpression === "" && operators.includes(value)) {
+                        return;
+                    }
+
+                    if (currentExpression === "" && value === "0") {
+                        return;
+                    }
+
+                    
+                    if (value === 'sin') {
+                        const n = getLastNumber();
+                        const result = Math.sin(Number(n));
+                        currentExpression = currentExpression.replace(n, result);
+                        preview.textContent = currentExpression;
+                        return;
+                    }
+                    if (value === 'cos') {
+                        const n = getLastNumber();
+                        const result = Math.cos(Number(n));
+                        currentExpression = currentExpression.replace(n, result);
+                        preview.textContent = currentExpression;
+                        return;
+                    }
+                    if (value === 'tan') {
+                        const n = getLastNumber();
+                        const result = Math.tan(Number(n));
+                        currentExpression = currentExpression.replace(n, result);
+                        preview.textContent = currentExpression;
+                        return;
+                    }
+                    if (value === 'log') {
+                        const n = getLastNumber();
+                        const result = Math.log10(Number(n));
+                        currentExpression = currentExpression.replace(n, result);
+                        preview.textContent = currentExpression;
+                        return;
+                    }
+                    if (value === 'In') {
+                        const n = getLastNumber();
+                        const result = Math.log(Number(n));
+                        currentExpression = currentExpression.replace(n, result);
+                        preview.textContent = currentExpression;
+                        return;
+                    }
+                    if (value === 'x²') {
+                        const n = getLastNumber();
+                        const result = Math.pow(Number(n), 2);
+                        currentExpression = currentExpression.replace(n, result);
+                        preview.textContent = currentExpression;
+                        return;
+                    }
+                    if (value === 'x³') {
+                        const n = getLastNumber();
+                        const result = Math.pow(Number(n), 3);
+                        currentExpression = currentExpression.replace(n, result);
+                        preview.textContent = currentExpression;
+                        return;
+                    }
+                    if (value === '√') {
+                        const n = getLastNumber();
+                        const result = Math.sqrt(Number(n));
+                        currentExpression = currentExpression.replace(n, result);
+                        preview.textContent = currentExpression;
+                        return;
+                    }
+                    if (value === 'π') {
+                        currentExpression += Math.PI;
+                        preview.textContent = currentExpression;
+                        return;
+                    }
+
+                    if (value === '%') {
+                        const n = getLastNumber();
+                        const result = Number(n) / 100;
+                        currentExpression = currentExpression.replace(n, result);
+                        preview.textContent = currentExpression;
+                        return;
+                    }
+                    if (value === 'exp') {
+                        currentExpression += '*10^';
+                        preview.textContent = currentExpression;
+                        return;
+                    }
+                                        preview.scrollLeft = preview.scrollWidth;
+                    currentExpression += value
+                    preview.textContent = currentExpression
+
+                })
+            }) 
+        </script>
+</body>
+
+</html>
