@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" stylesheets="@../../css/forms.css"
+            fx:controller="org.example.project.hospitalmanagementsystem.controller.admin.ManageDepartmentController">
+
+    <top>
+        <VBox spacing="10" ><padding><Insets top="15"/> </padding>
+            <HBox alignment="TOP_LEFT" >
+                <Button text="← Back" onAction="#goBackToAdmin"/>
+            </HBox>
+            <HBox spacing="10">
+                <TextField fx:id="searchField" promptText="Search departments..." HBox.hgrow="ALWAYS"/>
+                <ComboBox fx:id="filterCombo" prefWidth="150"/>
+                <Button text="Add Department" onAction="#onAddDepartment"/>
+            </HBox>
+
+            <HBox spacing="20">
+                <Label fx:id="totalDepartmentsLabel" style="-fx-font-weight: bold;"/>
+                <Label fx:id="mostVisitedLabel" style="-fx-font-weight: bold;"/>
+                <Label fx:id="mostDoctorsLabel" style="-fx-font-weight: bold;"/>
+
+
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" ><padding><Insets top="15"/> </padding>
+            <TilePane fx:id="departmentTilePane" hgap="15" vgap="15" prefColumns="2"/>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

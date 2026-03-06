@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<VBox spacing="15" alignment="CENTER" xmlns:fx="http://javafx.com/fxml" styleClass="@../../css/departments.css"
+      fx:controller="org.example.project.hospitalmanagementsystem.controller.users.DepartmentView"
+      style="-fx-padding: 20;">
+
+    <Label fx:id="nameLabel" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+    <Label fx:id="descriptionLabel" wrapText="true" style="-fx-text-fill: gray;" />
+    <Label fx:id="visitsLabel" text="Visits:" style="-fx-font-size: 14px;" />
+    <Label text="Available Services"/>
+    <ListView fx:id="servicesListView" prefHeight="180" prefWidth="100"/>
+
+    <Label text="Our Doctors" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+    <VBox fx:id="doctorContainer" spacing="10" />
+
+    <HBox spacing="20" alignment="CENTER_RIGHT">
+        <Button  text="Back" styleClass="primary-button" onAction="#handleBack"/>
+
+        <Button text="Book Appointment" styleClass="primary-button" onMouseClicked="#handleBookAppointment"/>
+    </HBox>
+
+
+</VBox>
+<!--        generate fxml for dept view controller-->

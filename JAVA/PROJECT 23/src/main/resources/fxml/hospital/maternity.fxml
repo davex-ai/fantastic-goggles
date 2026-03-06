@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox spacing="20" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.project.hospitalmanagementsystem.controller.hospital.Maternity" alignment="TOP_CENTER" styleClass="department-root">
+
+    <Label text="Maternity Department" styleClass="department-header" />
+
+    <TextArea editable="false" wrapText="true" styleClass="overview-text"
+              text="Comprehensive maternity care including prenatal, delivery, and postnatal services."
+              maxWidth="600" prefHeight="100"/>
+
+    <Label text="Services Offered:" styleClass="section-title"/>
+
+    <VBox spacing="8" styleClass="services-list" maxWidth="600">
+        <Label text="• Prenatal Care" styleClass="service-item" alignment="CENTER"/>
+        <Label text="• Labor &amp; Delivery" styleClass="service-item"/>
+        <Label text="• Postnatal Care" styleClass="service-item"/>
+        <Label text="• Family Planning" styleClass="service-item"/>
+    </VBox>
+
+    <Label text="Doctors" styleClass="section-title"/>
+    <FlowPane fx:id="doctorPane" hgap="20" vgap="20" prefWrapLength="600" alignment="CENTER"/>
+
+    <Label text="Working Hours: Mon - Fri, 08:00 - 17:00" styleClass="hours-label"/>
+
+    <HBox spacing="20" alignment="CENTER" maxWidth="300">
+        <Button text="Book Appointment" fx:id="bookButton" styleClass="primary-button" minWidth="150"/>
+        <Button text="← Back" onAction="#handleBack" styleClass="secondary-button" minWidth="100" />
+    </HBox>
+
+</VBox>

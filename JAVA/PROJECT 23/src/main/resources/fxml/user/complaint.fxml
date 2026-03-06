@@ -1,0 +1,86 @@
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import java.net.URL?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.project.hospitalmanagementsystem.controller.users.Complaint"
+            prefWidth="600" prefHeight="800">
+
+  <!-- Background Image -->
+  <ImageView fx:id="backgroundImage" fitWidth="1400" fitHeight="800" preserveRatio="false" pickOnBounds="true" mouseTransparent="true">
+    <image>
+      <Image url="@../../css/media/background.jpg"/>
+    </image>
+  </ImageView>
+
+  <!-- Main Content -->
+  <VBox spacing="15" alignment="TOP_CENTER" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20"
+        style="-fx-background-color: rgba(255, 255, 255, 0.8); -fx-padding: 20; -fx-background-radius: 10;">
+
+    <!-- Title -->
+    <Label text="Submit a Complaint" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <!-- Name and Email -->
+    <TextField fx:id="nameField" promptText="Full Name" maxWidth="400"/>
+    <TextField fx:id="emailField" promptText="Email Address" maxWidth="400"/>
+
+    <!-- Submitter Type -->
+    <Label text="Who is submitting this complaint?" style="-fx-font-weight: bold;"/>
+    <HBox spacing="20" alignment="CENTER">
+      <RadioButton text="Patient" fx:id="patientRadio"/>
+      <RadioButton text="Relative of Patient" fx:id="relativeRadio"/>
+      <RadioButton text="Employee" fx:id="employeeRadio"/>
+      <RadioButton text="Partner" fx:id="partnerRadio"/>
+    </HBox>
+
+    <!-- Category ComboBox -->
+    <ComboBox fx:id="categoryBox" maxWidth="400">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Service Issue"/>
+          <String fx:value="Billing Problem"/>
+          <String fx:value="Staff Complaint"/>
+          <String fx:value="Other"/>
+        </FXCollections>
+      </items>
+    </ComboBox>
+
+    <!-- Complaint TextArea -->
+    <TextArea fx:id="complaintField" promptText="Describe your complaint" wrapText="true" maxWidth="400" prefRowCount="6"/>
+
+    <!-- Accordion for common issues -->
+    <Label text="Common Issues and Suggested Solutions" style="-fx-font-weight: bold;"/>
+    <Accordion fx:id="problemAccordion" maxWidth="400"/>
+
+    <!-- Buttons -->
+    <HBox spacing="20" alignment="CENTER">
+      <Button text="Submit" onAction="#handleSubmit" prefWidth="100"/>
+      <Button text="Clear" onAction="#handleClear" prefWidth="100"/>
+      <Button text="Back" onAction="#handleBackToHome" prefWidth="100"/>
+    </HBox>
+
+    <!-- Emergency Contact -->
+    <Label text="Emergency Contact:" style="-fx-font-weight: bold;"/>
+    <Hyperlink fx:id="adminContactLink" text="+2349164794335" onAction="#handleEmergencyCall"/>
+
+  </VBox>
+
+  <stylesheets>
+    <URL value="@../../css/complaint.css"/>
+  </stylesheets>
+
+</AnchorPane>

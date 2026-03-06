@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.project.hospitalmanagementsystem.controller.hospital.ClinicalController" alignment="TOP_CENTER" styleClass="department-root">
+    <Label text="Clinical Department (Check-ups)" styleClass="department-header" />
+
+    <TextArea fx:id="overviewText" editable="false" wrapText="true" styleClass="overview-text" text="Comprehensive patient care including diagnostics, treatment planning, and follow-up."/>
+
+    <Label text="Services Offered:" styleClass="section-title"/>
+    <VBox spacing="5" styleClass="services-list" alignment="CENTER">
+        <Label text="• General Consultation"/>
+        <Label text="• Diagnostic Testing"/>
+        <Label text="• Chronic Disease Management"/>
+    </VBox>
+
+    <Label text="Doctors" styleClass="section-title"/>
+    <FlowPane fx:id="doctorPane" hgap="20" vgap="20" prefWrapLength="600" alignment="CENTER"/>
+
+    <Label text="Working Hours: Mon - Fri, 08:00 - 18:00" styleClass="hours-label"/>
+
+    <HBox spacing="20" alignment="BOTTOM_CENTER" styleClass="nav-bar">
+    <Button text="Book Appointment" fx:id="bookButton" styleClass="primary-button" />
+    <Button text="← Back" onAction="#handleBack" styleClass="primary-button" />
+    </HBox>
+
+
+</VBox>
