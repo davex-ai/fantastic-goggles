@@ -1,0 +1,71 @@
+                                                               Basic Bash Commands (for navigating and managing files):
+
+pwd: Prints the current working directory.
+ls: Lists the contents of the current directory. Use ls -la to show hidden files.
+cd <directory_name>: Changes the current directory. Use cd .. to go up one level.
+mkdir <directory_name>: Creates a new directory.
+touch <file_name>: Creates a new empty file.
+rm <file_name>: Removes a file. Use rm -r <directory_name> to remove a directory and its contents.
+cp <source_file> <destination>: Copies a file.
+mv <source_file> <destination>: Moves or renames a file.
+cat <file_name>: Displays the content of a file.
+$ cd .. :to go to parent directory 
+start<file_name>:  is a Windows command that can be executed within Git Bash. This command will open the file using the default application associated with that file type in your Windows operating system.
+
+
+ 
+                                                                                                   Basic Git Commands:
+$ git mv index.html ./backup/index-new.html
+
+$ git config --list: list configuration details
+$ git config --global user.name "Dave Omotoye"
+$ git config --global user.email "omotyedave4@gmail.com"
+$ git init main: To initialize a git repo/folder in your current directory (create a git foldr called main in ur directory)
+$ cat index.html: To list content of a file (index.html
+git init: Initializes a new Git repository in the current directory.
+git clone <repository_url>: Clones an existing Git repository from a remote URL to your local machine.
+git commit -am "Adding this.html page": move a file/folder fro initialized stage to local repo
+git mv <existing file> <new file>: used to rename a file
+git add <file_name> or git add .: Stages changes for a specific file or all changes in the current directory for the next commit.
+git commit -m "Commit message": Records the staged changes to the repository with a descriptive message.
+git status: Shows the current status of your working directory, including untracked, modified, and staged files.
+git init -b main: initializes a repo with a new branch
+git push: Uploads local commits to a remote repository.
+git pull: Downloads and integrates changes from a remote repository into your local branch.
+
+git merge <branch_to_merge>: Merges changes from one branch into the current branch.
+git log: Displays the commit history. 
+$ git mv index.html ./backup/index-new.html: This moves index.html to an already created backup folder at the same time renaming the index.html to index-new.html
+git branch : to list existing branches of a folder
+git branch <branchname>: To create a new branch 
+git checkout <branch name> or  git switch <name of branchgti>: To switch to a branch specific branch
+git checkout -b <branch name>: To create a branch and enter at the same time
+git restore: Ctrl + Z of the git CLI
+git restore --staged<filename>:
+git branch <new_branch_name>: Creates a new branch.
+git branch -m <branch name> <new branch name> : To rename a branch
+git branch -D <branch name> : To delete a branch(Note: You can't delete a branch you're on)(hard delete)
+git branch -d or --delete <branch name> : To delete a branch(Note: You can't delete a branch you're on)(soft delete)
+git diff <branchname>..<branchname>: To see the difference between 2 branches 
+git rm --cached <filename>:To unstage a staged folder
+.gitignore: Type names of files you dont want to track in this file
+.gitkeep: add this if you want to initialize an empty folder
+
+$ git checkout -- <filename>: To go back to the how a file was when it was last committed
+git reset HEAD <filename> then git checkout -- <filename>: To go back to the how a file was when it was last committed when it is in the staging area
+git reset <commitId>: To reset the whole project to when it was last committed
+
+git merge <branchname>: To merge a branch to the branch your on
+git pull: To add the changes of the remote repo into ur branch
+git log --oneline
+git checkout <commitId> -- <filename>:To go back to the how a file was when it was last committed (use when u commit an error in the file)
+git reset --<soft> <commit id>: Ignores changes in the staging area and working directory up until the commit id was made
+git reset --<mixed> <commit id>: Discard changes in the staging area ignores working directory up until the commit id was made
+git reset --<hard> <commit id>: Discard changes in the staging area and working directory up until the commit id was made
+
+git remote add origin <link to your repo>: To link your local repo to your remote repo(notr you cant push code without linking your local repo to remote repo)
+git push -u origin master: To push your local repo to your remote repo
+git remote-v: To display all remote repo linked to your local repo
+git push origin --all
+ 
+Git Architecture levels (unintialiased stage > initialised stage > staging index > local repository > remote repository)

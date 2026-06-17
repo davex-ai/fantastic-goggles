@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 50px;
+        }
+
+        span {
+            font-size: 13px;
+            padding: 5px;
+        }
+
+        span img {
+            margin-right: 3px;
+        }
+
+        h3 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: bolder;
+            font-size: 15px;
+
+        }
+
+        .nav-end {
+            display: flex;
+            align-items: center;
+        }
+
+        .search {
+            height: 14px;
+            margin-right: 5px;
+        }
+
+        .nav-click {
+            font-weight: bolder;
+            font-size: 13px;
+            color: #ffbb00;
+            background-color: white;
+            border-radius: 4px;
+            padding: 5px 10px 5px 10px;
+            margin-left: 20px;
+            border: none;
+            box-shadow: 2px 2px 5px;
+            cursor: pointer;
+        }
+        .nav-click img{
+            margin-right: 5px;
+             height: 14px;
+        }
+
+        .hero {
+            background-image: url(images/foodwagon/67024c56ad42b6be9069aba3dcabc05b4b387176.png);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 19rem;
+        }
+        .hero h1{
+           font-size: 50px;
+        }
+
+        .box {
+            margin-top: 20px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .form-h {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .Delivery {
+            background-color: #FFF0E6;
+            color: #F28C38;
+            padding: 8px 19px 8px 19px;
+            border-radius: 8px;
+        }
+
+        .Pickup {
+            color: rgb(117, 114, 114);
+            background-color: white;
+            margin-left: 10px;
+            font-size: bolder;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        #input {
+            border-radius: 9px;
+            padding: 11px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgb(245, 242, 242);
+            padding-right: 200px;
+            height: 15px;
+        }
+
+        .hero-button {
+            color: white;
+            background-color: rgba(214, 45, 23, 0.932);
+            border-radius: 5px;
+            padding: 10px 20px 10px 20px;
+            margin-left: 10px;
+            border: none;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        .pic4 {
+            display: flex;
+            margin-top: 2em;
+            margin-left: 28em;
+        }
+
+        .picz {
+            width: 200px;
+            margin-left: 30px;
+        }
+
+        .under {
+            height: 15em;
+            margin-top: 50px;
+            background: linear-gradient(to bottom, #FFF0E6, #f7ebe3);
+        }
+
+        .under h3 {
+            font-size: larger;
+            font: bolder;
+            display: flex;
+            justify-content: space-around;
+            padding-top: 20px;
+            color: #F28C38;
+
+        }
+
+        .signz {
+
+            display: flex;
+            margin-top: 2em;
+            margin-left: 28em;
+        }
+
+        .sign {
+            height: 120px;
+            margin-left: 40px;
+        }
+
+        footer hr {
+            width: 90em;
+            margin-left: 9em;
+            margin-top: 6em;
+        }
+        footer {
+            background-color: rgba(14, 13, 13, 0.952);
+            color: #ffffff;
+            height: 50em;
+        }
+
+        .top-footer {
+            margin-top: 2em;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .top-footer h4 {
+            color: #ebe8e7c9;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+
+        .bottom-footer {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .me{
+            display: flex;
+            justify-content: space-evenly;
+         }
+        .mid-foot{
+            margin-left: 8em;
+        } 
+        .bottom-footer a {
+            text-decoration: none;
+            color: #ebe8e7c9;
+            font-size: 12px;
+            margin-bottom: 200em;
+
+        }
+
+        .bottom-footer h4 {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .bottom-footer input {
+            color: white;
+            background-color: rgb(160, 155, 155);
+            border: none;
+            padding: 12px;
+            padding-right: 24px;
+            border-radius: 5px;
+        }
+
+        .bottom-footer button {
+            background: linear-gradient(to right, rgb(255, 208, 0), rgb(255, 166, 0));
+            border-radius: 5px;
+            padding: 12px;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+            border: none;
+        }
+
+        .foot-end {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .foot-end h5 {
+            font-size: 12px;
+        }
+
+        .foot-end span {
+            font-weight: bolder;
+        }
+          .foot-end-phone{
+            display: none;
+         }
+        @media (max-width: 500px){
+            nav{
+                  width: 100%;
+            }
+            .mid-nav{
+                display: none;
+            }
+            .nav-end{
+                 display: block;
+            }
+            .nav-click {
+            font-weight: bolder;
+            font-size: 9px;
+            color: #ffbb00;
+            background-color: white;
+            border-radius: 4px;
+            padding: 5px 5px 5px 5px;
+            border: none;
+            box-shadow: 2px 2px 5px;
+            cursor: pointer;
+        }
+            #search{
+               font-size: 10px;
+            }
+            .search{
+               height: 8px;
+            }
+           .nav-click img{
+            margin-right: 5px;
+            height: 9px;
+        }
+        .hero{
+            width: 100%;
+            display: flex;
+        }
+        .hero h1 {
+            font-size: 40px;
+            margin-left: 10%;
+        }
+        p{
+            font-size: 15px;
+            margin-left: 6%;
+            
+        }
+        /* .box{
+            width: 120px;
+        } */
+         .form-h{
+            display: flex;
+            align-items: center;
+         }
+        .hero-dish{
+            display: none;
+         }
+          .Delivery {
+            background-color: #FFF0E6;
+            color: #F28C38;
+            padding: 8px 19px 8px 19px;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+        .Delivery img{
+            height: 10px;
+         }
+        
+        .Pickup {
+            color: rgb(117, 114, 114);
+            background-color: white;
+            margin-left: 15px;
+            font-size: bolder;
+            font-size: 12px;
+        }
+        
+        .Pickup img{
+            margin-top: 7px;
+             height: 10px;
+        }
+        #input {
+            border-radius: 9px;
+            padding: 11px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgb(245, 242, 242);
+            padding-right: 85px;
+            height: 15px;
+        }
+        .hero hr{
+            width: 100%;
+        }
+
+        .hero-button {
+            color: white;
+            background-color: rgba(214, 45, 23, 0.932);
+            border-radius: 5px;
+            padding: 10px 20px 10px 20px;
+            margin-left: 10px;
+            border: none;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+        .pic4 {
+            display: flex;
+            margin-top: 2em;
+            margin-left: 0.2em;
+        }
+
+        .picz {
+            width: 90px;
+         }
+
+        .under {
+            width: 100%;
+            height: 10em;
+            margin-top: 50px;
+            background: linear-gradient(to bottom, #FFF0E6, #f7ebe3);
+        }
+
+        .under h3 {
+            font-size: larger;
+            font: bolder;
+            display: flex;
+            justify-content: space-around;
+            padding-top: 20px;
+            color: #F28C38;
+
+        }
+         .signz {
+            display: flex;
+            margin-top: 2em;
+            margin-left: 0.1em;
+        }
+
+        .sign {
+            height: 60px;
+            margin-left: 30px;
+        }
+        .no-phone{
+             display: none;
+        }
+        footer hr {
+            width: 25em;
+            margin-left: 24px;
+             margin-top: 3em;
+        }
+        .me{
+            display: none;
+        }
+        footer button{
+            margin-left: 3em;
+        }
+        footer input{
+            margin-right: 3em;
+        }
+         .foot-end{
+            display: none;
+         }
+         .foot-end-phonfe{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .foot-end h5 {
+            font-size: 12px;
+        }
+        .foot-end span {
+            font-weight: bolder;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo"><img src="images/foodwagon/foodlogo.png" alt=""></div>
+        <div class="mid-nav">
+            <h3>Deliver to: <span style="color: rgb(117, 114, 114);"><img src="images/foodwagon/location.png" alt="">Current
+                    Location</span> Mohammadpur Bus Stand, Dhaka</h3>
+        </div>
+        <div class="nav-end">
+            <h3 id="search"><img class="search" src="images/foodwagon/search.png" alt="">Search Food</h3>
+            <button class="nav-click"><img src="images/foodwagon/Screenshot 2025-07-29 222232.png" alt="">Login</button>
+        </div>
+    </nav>
+    <section class="hero">
+        <div>
+            <h1>Are you starving?</h1>
+            <p style="color: rgb(75, 73, 73);">Within a few clicks, find meals that are accessible near you</p>
+            <div class="box">
+                <div class="form-h">
+                    <h3 class="Delivery"><img src="images/foodwagon/bike.png" alt="">Delivery</h3>
+                    <h3 class="Pickup"><img style="margin-right: 4px;" src="images/foodwagon/bag.png" alt="">Pickup</h3>
+                </div>
+                <hr>
+                <div style="margin-top: 15px;">
+                    <input type="text" name="" id="input" placeholder=" Enter your Address">
+                    <button class="hero-button"> <img class="search" style="padding-right: 1px;" src="images/foodwagon/search.png"
+                            alt="">Find Food</button>
+                </div>
+            </div>
+        </div>
+              <div class="hero-dish">
+            <div ><img src="images/foodwagon/dish.png" alt=""></div>
+        </div>    </section>
+    <div class="pic4">
+        <img class="picz" src="images/foodwagon//Flash Deal Card.png" alt="">
+        <img class="picz" src="images/foodwagon//Flash Deal Card (1).png" alt="">
+        <img class="picz" src="images/foodwagon//Flash Deal Card (2).png" alt="">
+        <img class="picz" src="images/foodwagon//Flash Deal Card (3).png" alt="">
+    </div>
+    
+    <section class="under">
+        <h3>How does it woork</h3>
+        <div class="signz">
+            <img class="sign" src="images/foodwagon/Frame 730.png" alt="">
+            <img class="sign" src="images/foodwagon/Frame 731.png" alt="">
+            <img class="sign" src="images/foodwagon/Frame 732.png" alt="">
+            <img class="sign" src="images/foodwagon/Frame 733.png" alt="">
+        </div>
+    </section>
+    <footer>
+        <h2 style="padding-top: 4em; padding-left: 5.5em;">Our top cities</h2>
+        <div class="top-footer">
+            <div>
+                <h4>San Francisco</h4>
+                <h4>Miami</h4>
+                <h4>San Diego</h4>
+                <h4>East Bay</h4>
+                <h4>Long Beach</h4>
+            </div>
+            <div class="no-phone">
+                <h4>Los Angeles</h4>
+                <h4>Washington DC</h4>
+                <h4>Seattle</h4>
+                <h4>Portland</h4>
+                <h4>Nashville</h4>
+            </div>
+            <div>
+                <h4>New York City</h4>
+                <h4>Orange County</h4>
+                <h4>Atlanta</h4>
+                <h4>Charlotte</h4>
+                <h4>Denver</h4>
+            </div>
+            <div class="no-phone">
+                <h4>Chicago</h4>
+                <h4>Phoenix</h4>
+                <h4>Las Vegas</h4>
+                <h4>Sacramento</h4>
+                <h4>Oklahoma City</h4>
+            </div>
+            <div>
+                <h4>Columbus</h4>
+                <h4>New Mexico</h4>
+                <h4>Albuquerque</h4>
+                <h4>Sacramento</h4>
+                <h4>New Orleans</h4>
+            </div>
+        </div>
+        <hr>
+         <div class="bottom-footer">
+            <div class="me">
+            <div class="mid-foot">
+                <h4>Company</h4>
+                <a href="">About Us</a> <br>
+                <a href="">Team</a> <br>
+                <a href="">Careers</a> <br>
+                <a href="">Blog</a>
+            </div>
+            <div class="mid-foot">
+                <h4>Contact</h4>
+                <div>
+                    <a href="">Help & Support</a> <br>
+                    <a href="">Partner with us</a> <br>
+                    <a href="">Ride with us</a>
+                </div>
+            </div>
+            <div class="mid-foot">
+                <h4>Legal</h4>
+                <a href="">Terms & Conditions</a><br>
+                <a href="">Refund & Cancellation</a><br>
+                <a href="">Privacy Policy</a><br>
+                <a href="">Cookie Policy</a>
+            </div>
+            </div>
+
+            <div style="display: block;">
+                <div>
+                    <h3 style="margin-top: 40px; margin-bottom: 20px;">Follow Us</a>
+                </div>
+                <div>
+                    <a href="">Instagram</a>
+                    <a href="">Facebook</a>
+                    <a href="">Twitter</a>
+                </div>
+                <div>
+                    <h4>Receive exclusive offers in your mailbox</h4>
+                </div>
+                <div>
+                    <input type="email" name="" id="" placeholder="Enter Your Email">
+                    <button>Suscribe</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="foot-end">
+            <h5>All Rights Reserved &copy; <span>Your Company, 2025</span></h5>
+            <h5>Made with💛 by<span>Nexora</span></h5>
+        </div>
+        <div class="foot-end-phone">
+            <h5>All Rights Reserved &copy; <br> <span>Your Company, 2025</span></h5>
+            <h5>Made with💛 by <br><span>Nexora</span></h5>
+        </div>
+        
+    </footer>
+
+</body>
+
+</html>

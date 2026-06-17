@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gradient-text {
+  /* Fallback color for older browsers that don't support gradients */
+  color: #CA4246; 
+  
+  /* Set the font size and weight for better visibility of the gradient */
+  font-size: 72px;
+  font-weight: bold;
+  
+  /* 1. Create the linear gradient background */
+  background-image: linear-gradient(
+    45deg, 
+    #CA4246, 
+    #E16541, 
+    #F18F43, 
+    #8B9862, 
+    #476098, 
+    #A7489B
+  );
+  
+  /* 2. Clip the background to the text shape */
+  -webkit-background-clip: text;
+  background-clip: text;
+  
+  /* 3. Make the text transparent to show the clipped background */
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+    </style>
+</head>
+<body>
+    <h1 class="gradient-text">This Text Has a Linear Gradient</h1>
+
+</body>
+</html>

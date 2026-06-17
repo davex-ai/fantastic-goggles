@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: auto;
+        }
+
+        body {
+            background-color: black;
+            font-family: 'satoshi';
+            font-family: 'Arial', sans-serif;
+
+        }
+
+        nav {
+            position: fixed;
+            z-index: 1;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: #FFFFFF;
+            height: 70px;
+            /* background-color: #0D0D0D; */
+            width: 100%;
+        }
+
+
+        nav a {
+            margin-left: 40px;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .links {
+            display: flex;
+            margin-left: 20em;
+        }
+
+        nav div button {
+            color: #FFFFFF;
+            border-color: #FFFFFF;
+            background-color: #0D0D0D;
+            border-radius: 20px;
+            border-width: 1px;
+            padding: 12px;
+
+        }
+
+        section {
+            height: 100vh;
+        }
+
+        .bg-img img {
+            position: absolute;
+            z-index: 0;
+            height: 40em;
+            width: 80em;
+            object-fit: cover;
+            margin: 5em 7em 2em 8em;
+            border-radius: 20px;
+        }
+
+        .hero h1 {
+            font-size: 4.8rem;
+            font-family: 'Arial', sans-serif;
+            font-weight: 900;
+            color: white;
+            text-align: center;
+            text-shadow:
+                12px 0px 0 rgba(255, 255, 255, 0.3),
+                15px -1px 0 #FFFFFF00,
+                12px 1px 0 rgba(255, 255, 255, 0.3),
+                12px -1px 0 rgba(255, 255, 255, 0.3);
+            z-index: 0;
+            position: relative;
+            line-height: 4em;
+        }
+
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .mid-bg {
+            position: relative;
+            display: flex;
+            justify-content: space-evenly;
+            z-index: 1;
+            margin-top: 90px;
+        }
+
+        .mid-bg h3 {
+            color: rgba(255, 255, 255, 0.8);
+            opacity: 2.0;
+            width: 20em;
+            font-weight: 100;
+        }
+
+        .mid-click {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .start-btn {
+            color: #FFFFFF;
+            background-color: #0D0D0D;
+            border-radius: 25px;
+            padding: 15px 45px 15px 45px;
+        }
+
+        .hero .arrow {
+            background-color: #6FFE95;
+            padding: 7px 15px;
+            border-radius: 50%;
+            margin-left: -20px;
+            border: none;
+            font-size: 25px;
+        }
+
+        .mid-end-phone {
+            display: none;
+        }
+
+        .hero ol {
+            color: #FFFFFF;
+            position: relative;
+            list-style: none;
+            opacity: 0.8;
+            height: 20px;
+            z-index: 1;
+            line-height: 32em;
+            margin-left: 7em;
+        }
+
+        .hero li {
+            margin-left: 25px;
+            display: inline;
+        }
+
+        .hero ol li::before {
+            content: "";
+            /* Empty content for the pseudo-element */
+            display: inline-block;
+            width: 20px;
+            /* Adjust size as needed */
+            height: 20px;
+            /* Adjust size as needed */
+            border-radius: 50%;
+            background-color: #FFFFFF;
+            /* Set desired color */
+            margin-right: 8px;
+            /* Space between circle and text */
+            vertical-align: middle;
+            /* Align with text */
+        }
+
+        #about {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .about-logo img {
+            height: 5em;
+            width: 30em;
+        }
+
+        .about-pic img {
+            height: 25em;
+            width: 40em;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        #about p {
+            color: #FFFFFF;
+            width: 24em;
+            margin: 5em 0em;
+            font-size: 22px;
+        }
+
+        .about-click {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .more {
+            color: #0D0D0D;
+            background-color: #6FFE95;
+            border-radius: 25px;
+            padding: 15px 45px 15px 45px;
+            font-weight: 700;
+        }
+
+        .about-click .arrow {
+            background-color: #FFFFFF;
+            padding: 7px 15px;
+            border-radius: 50%;
+            margin-left: -20px;
+            border: none;
+            font-size: 25px;
+        }
+
+        .program-logo img {
+            margin-top: 5em;
+            margin-left: 17em;
+        }
+
+        .program-cards {
+            display: flex;
+            margin-left: 15em;
+            color: #FFFFFF;
+            align-items: center;
+        }
+
+        .program-cards .card {
+            background-color: #171717;
+            width: 25em;
+            border-radius: 20px;
+            margin: 30px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .program-cards .card:hover {
+            background-color: #FFFFFF;
+            color: #0D0D0D;
+            box-shadow: 2px 2px 2px 2px gray;
+        }
+
+        .program-cards .card h2 {
+            margin: 15px;
+        }
+
+        .program-cards .card p {
+            font-size: 20px;
+        }
+
+        #plan img {
+            margin: 5em 5em 4em 13.5em;
+            height: 50px;
+        }
+
+        .plan-card {
+            display: flex;
+            margin-left: 10em;
+        }
+        
+        .plan-card .card {
+            width: 15em;
+            margin-left: 90px;
+            padding: 22px;
+            border-radius: 30px;
+            color: #FFFFFF;
+            height: 32em;
+            background-color: #0D0D0D;
+            box-shadow: 5px 5px 5px 5px rgb(22, 21, 21);
+        }
+
+        .plan-card .card:hover {
+            box-shadow: 0px 0px 15px 15px #5be07e;
+            transform: scale(110%);
+            transition: ease-in-out 7s initial;
+        }
+
+        .plan-card .card li {
+            list-style-type: disc;
+        }
+
+        #plan .card p,
+        h1 {
+            text-align: center;
+        }
+
+        #plan h1 {
+            font-size: 30px;
+            margin: 10px;
+        }
+
+        #plan p {
+            font-size: 18px;
+            opacity: 2.0;
+            margin-bottom: 3em;
+        }
+
+        #plan ol {
+            margin-bottom: 6em;
+            font-weight: 500;
+        }
+
+        #plan li {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        #plan h2 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 200;
+            margin: 0 0 10px 0.5em;
+        }
+
+        #plan button {
+            background-color: #6FFE95;
+            color: #0D0D0D;
+            padding: 15px;
+            width: 10em;
+            border-radius: 20px;
+            font-size: 20px;
+            font-weight: 700;
+            margin-left: 1em;
+        }
+
+        .card-btn3 {
+            margin-top: -4em;
+        }
+
+        .profile {
+            border-radius: 50%;
+        }
+
+        .message {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 15em;
+            color: #FFFFFF;
+        }
+
+        .message .card {
+            text-align: center;
+            border-radius: 30px;
+            padding: 32px;
+            width: 35em;
+            height: 15em;
+            background-color: rgb(22, 21, 21);
+        }
+
+        #profile img {
+            margin-left: 15em;
+            height: 6em;
+            background-color: #FFFFFF;
+            border-radius: 50%;
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #testimonial h2 {
+            margin: 20px;
+        }
+
+        .testimonial-logo {
+            margin: 8em 0 -8em 6em;
+        }
+
+        .arr {
+            display: flex;
+            color: #FFFFFF;
+            border-radius: 50%;
+            margin-top: 2em;
+            margin-left: 40em;
+        }
+
+        .right {
+            margin-left: 12em;
+        }
+
+        .right:hover,
+        .left:hover {
+            border-radius: 50%;
+            background-color: wheat;
+            padding: 3px;
+            cursor: pointer;
+        }
+
+
+        #contact {
+            text-align: center;
+        }
+
+        #contact .contact-text {
+            padding-top: 18em;
+            color: #FFFFFF;
+        }
+
+        #contact .about-click {
+            margin-left: 25em;
+            margin-top: 2em;
+            font-size: 25px;
+        }
+
+        #contact h2 {
+            font-size: 55px;
+            color: #6FFE95;
+        }
+
+        #contact p {
+            font-size: 25px;
+        }
+
+        footer {
+            color: #FFFFFF;
+            height: 25em;
+        }
+        .footer-up{
+            height: 10em; margin: 5em;
+        }
+
+        footer h3 {
+            margin-left: 3em;
+            font-size: 30px;
+        }
+
+        footer h1 {
+            font-size: 6.5em;
+            color: #6FFE95;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+        }
+
+        hr {
+            width: 73em;
+            margin: 0 2em 3em 11em;
+            opacity: 0.2;
+        }
+
+        footer .bottom {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        footer a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin-left: 30px;
+        }
+
+        .contact-icons i {
+            border-radius: 50%;
+            color: #6FFE95;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 500px) {
+            body {
+                width: 100%;
+                height: 10em;
+                overflow-x: hidden;
+            }
+
+            nav {
+                width: 100%;
+                /* background-color: #171717; */
+            }
+
+            nav h3 {
+                margin-left: 10px;
+            }
+
+            nav a {
+                display: none;
+            }
+
+            nav button {
+                color: #FFFFFF;
+                border-color: #FFFFFF;
+                background-color: #0D0D0D;
+                border-radius: 20px;
+                border-width: 1px;
+                padding: 12px;
+                margin-left: 10px;
+
+            }
+
+            .bg-img img {
+                height: 20em;
+                width: 24em;
+                /* object-fit: cover; */
+                margin: 5em 7em 2em 1em;
+                border-radius: 20px;
+            }
+
+            .hero h1 {
+                margin-left: 10px;
+                font-size: 1.5em;
+                font-family: 'Arial', sans-serif;
+                font-weight: 900;
+                color: white;
+                text-align: center;
+                text-shadow:
+                    12px 0px 0 rgba(255, 255, 255, 0.3),
+                    15px -1px 0 #FFFFFF00,
+                    12px 1px 0 rgba(255, 255, 255, 0.3),
+                    12px -1px 0 rgba(255, 255, 255, 0.3);
+                z-index: 0;
+                position: relative;
+                line-height: 10em;
+            }
+
+            /* ::-webkit-scrollbar {
+            display: none;
+        } */
+
+            .mid-bg {
+                position: relative;
+                display: flex;
+                justify-content: space-evenly;
+                z-index: 1;
+                margin: -20px 0 0 -30px;
+            }
+
+            .mid-bg h3 {
+                font-size: 10px;
+                color: rgba(255, 255, 255, 0.8);
+                opacity: 2.0;
+                width: 15em;
+            }
+
+            .mid-click {
+                text-align: center;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                margin-right: -50px;
+            }
+
+            .start-btn {
+                color: #FFFFFF;
+                background-color: #0D0D0D;
+                border-radius: 25px;
+                padding: 10px 30px 10px 30px;
+                font-size: 10px
+            }
+
+            .hero .arrow {
+                background-color: #6FFE95;
+                padding: 2px 8px;
+                border-radius: 50%;
+                margin-left: -25px;
+                border: none;
+                font-size: 25px;
+            }
+
+            .mid-end {
+                display: none;
+            }
+
+            .mid-end-phone {
+                display: block;
+            }
+
+            .hero ol {
+                width: 58em;
+                line-height: 38em;
+                margin-left: -1px;
+                font-size: 7px;
+            }
+
+            .hero li {
+                margin-left: 10px;
+                font-size: 10px;
+                display: inline;
+                margin-bottom: 0em;
+            }
+
+            .hero ol li::before {
+                content: "";
+                /* Empty content for the pseudo-element */
+                display: inline-block;
+                width: 5px;
+                /* Adjust size as needed */
+                height: 5px;
+                /* Adjust size as needed */
+                border-radius: 50%;
+                background-color: #FFFFFF;
+                /* Set desired color */
+                margin-right: 3px;
+                /* Space between circle and text */
+                vertical-align: middle;
+                /* Align with text */
+            }
+
+            #about {
+                margin-top: -48em;
+
+            }
+
+            .about-logo img {
+                height: 25px;
+                width: 120px;
+                margin-left: 20px;
+                margin-bottom: 20px;
+            }
+
+            .about-pic img {
+                height: 25em;
+                width: 12em;
+                border-radius: 20px;
+                /* object-fit: cover; */
+            }
+
+            #about p {
+                color: #FFFFFF;
+                width: 18em;
+                margin: 15px 0em 20px 15px;
+                font-size: 10px;
+            }
+
+            #about p span {
+                display: none;
+            }
+
+            .about-click {
+                text-align: center;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                margin: 10px 0 0 10px;
+
+            }
+
+            .more {
+                color: #0D0D0D;
+                background-color: #6FFE95;
+                border-radius: 25px;
+                padding: 10px 25px 10px 25px;
+                font-size: 10px;
+            }
+
+            .about-click .arrow {
+                background-color: #FFFFFF;
+                padding: 0.5px 3px;
+                border-radius: 50%;
+                margin-left: -20px;
+                border: none;
+                font-size: 25px;
+                margin-top: 5px;
+            }
+
+            .about-pic img {
+                margin: 20px 5px 65px 20px;
+                height: 120px;
+            }
+
+            #program {
+                margin-top: -24em;
+            }
+
+            .program-logo img {
+                height: 25px;
+                width: 120px;
+                margin-left: 20px;
+            }
+
+            .program-cards {
+                display: flex;
+                justify-content: space-around;
+                margin-left: 0.2em;
+                color: #FFFFFF;
+                align-items: center;
+            }
+
+            .program-cards .card {
+                background-color: #171717;
+                height: 120px;
+                width: 160px;
+                border-radius: 20px;
+                margin: 10px;
+                padding: 10px;
+                text-align: center;
+            }
+
+            .program-cards .card:hover {
+                background-color: #FFFFFF;
+                color: #0D0D0D;
+                box-shadow: 2px 2px 2px 2px gray;
+            }
+
+            .program-cards .card h2 {
+                margin: 5px;
+                font-size: 10px;
+            }
+
+            .program-cards .card p {
+                font-size: 8px;
+            }
+
+            #plan {
+                margin-top: -32em;
+
+            }
+
+            #plan img {
+                margin-bottom: 18px;
+                height: 25px;
+                width: 120px;
+                margin-left: 20px;
+            }
+
+            .plan-card {
+                display: flex;
+                margin-left: 1px;
+            }
+
+            .plan-card .card {
+                width: 100px;
+                height: 300px;
+                margin-left: 15px;
+                padding: 10px;
+                border-radius: 30px;
+                color: #FFFFFF;
+                flex-direction: column;
+                background-color: #0D0D0D;
+                box-shadow: -3px -3px 3px 3px rgb(22, 21, 21);
+
+            }
+
+            .plan-card .card:hover {
+                box-shadow: -3px -3px 5px 5px #6FFE95;
+
+                box-shadow: 0px 0px 5px 5px #5be07e;
+                transform: scale(105%);
+                transition: ease-in-out 7s initial;
+            }
+
+            .plan-card .card li {
+                list-style-type: disc;
+            }
+
+            #plan .card p,
+            h1 {
+                text-align: center;
+            }
+
+            #plan h1 {
+                font-size: 14px;
+                margin: 10px;
+            }
+
+            #plan p {
+                font-size: 10px;
+                opacity: 2.0;
+                margin-bottom: 3em;
+            }
+
+            #plan ol {
+                margin-left: -30px;
+                font-weight: 500;
+            }
+
+            #plan li {
+                font-size: 10px;
+                margin-bottom: 2px;
+            }
+
+            #plan h2 {
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-weight: 200;
+                margin: 0 0 5px 0.5em;
+                font-size: 12px;
+            }
+
+            #plan button {
+                background-color: #6FFE95;
+                color: #0D0D0D;
+                padding: 10px;
+                width: 100px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: 500;
+            }
+
+
+            .card-btn1 {
+                text-align: center;
+                margin-top: -20px;
+                margin-left: -10px;
+            }
+
+            .card-btn2 {
+                text-align: center;
+                margin-top: -20px;
+                margin-left: -10px;
+            }
+
+            #testimonial {
+                margin-top: -34em;
+            }
+
+            .testimonial-logo {
+                width: 180px;
+                margin: -8em 0 -8em 1em;
+                width: 120px;
+            }
+
+            .message {
+                display: flex;
+                justify-content: space-evenly;
+                margin-top: 10em;
+                color: #FFFFFF;
+            }
+
+            .message .card {
+                text-align: center;
+                border-radius: 30px;
+                padding: 22px;
+                height: 200px;
+                margin: 0 15px 0 10px;
+                background-color: rgb(22, 21, 21);
+            }
+
+            #profile img {
+                margin-left: 55px;
+                height: 30px;
+                background-color: #FFFFFF;
+                border-radius: 50%;
+            }
+
+            .card-top {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            #testimonial h2,
+            p {
+                font-size: 12px;
+            }
+
+            #testimonial #commas img {
+                height: 10px;
+                width: 10px;
+            }
+
+
+
+            .arr {
+                display: flex;
+                color: #FFFFFF;
+                border-radius: 50%;
+                margin-top: 2em;
+                margin-left: 8em;
+            }
+
+            .right {
+                margin-left: 8em;
+            }
+
+            .right:hover,
+            .left:hover {
+                border-radius: 50%;
+                background-color: wheat;
+                padding: 3px;
+                cursor: pointer;
+            }
+
+            #contact {
+                text-align: center;
+                margin-top: -25em;
+            }
+
+            #contact .contact-text {
+                 color: #FFFFFF;
+                font-size: 2px;
+            }
+
+            #contact .about-click {
+                margin-left: 135px;
+                margin-top: 1em;
+                font-size: 25px;
+            }
+
+            #contact h2 {
+                font-size: 30px;
+                color: #6FFE95;
+            }
+
+            #contact p {
+                font-size: 20px;
+            }
+
+            footer {
+                margin-top: -42em;
+                color: #FFFFFF;
+             }
+            .footer-up{
+            height: 8em;
+             margin: 0.5em;
+        }
+
+            footer h3 {
+                margin-left: 3em;
+                font-size: 12px;
+            }
+
+            footer h1 {
+                font-size: 35px;
+                color: #6FFE95;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+            }
+
+            hr {
+                width: 390px;
+                margin: -50px 0 30px 10px ; 
+                opacity: 0.2;
+                color:#FFFFFF;
+            }
+
+            footer .bottom {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                font-size: 5px;
+
+            }
+
+            footer a {
+                color: #FFFFFF;
+                text-decoration: none;
+                 
+            }
+
+            .contact-icons i {
+                border-radius: 50%;
+                color: #6FFE95;
+                margin-left: -20px;
+                text-decoration: none;
+                
+            }
+            
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div>
+            <h3>FitwithVannessa</h3>
+        </div>
+        <div class="links">
+            <a href="#about">About</a>
+            <a href="#program">Programs</a>
+            <a href="#plan">Plans</a>
+            <a href="#testimonial">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div> <button class="div_btn">Free Consultation</button></div>
+    </nav>
+    <section class="hero">
+        <div class="bg-img">
+            <img src="images/unsplash/dom-hill-nimElTcTNyY-unsplash.jpg" alt="">
+        </div>
+        <div>
+            <h1>STRONGER EVERYDAY!</h1>
+        </div>
+        <div class="mid-bg">
+            <div>
+                <h3>TRANSFORM YOUR BODY, MIND AND LIFESTYLE—ONE WORKOUT AT A TIME</h3>
+            </div>
+            <div class="mid-click">
+                <div>
+                    <buttonn class="start-btn">START NOW</button>
+                </div>
+                <div>
+                    <button class="arrow">↗</button>
+                </div>
+            </div>
+        </div>
+        <div class="mid-end">
+            <ol>
+                <li>JUMP ROPE</li>
+                <li>BENCH PRESS</li>
+                <li> PULL-UPS</li>
+                <li>BURPEES</li>
+                <li>PLANK</li>
+                <li>LUNGES</li>
+                <li>SQUATS</li>
+                <li>DEADLIFT</li>
+                <li>PUSH UPS</li>
+            </ol>
+        </div>
+        <div class="mid-end-phone">
+            <ol>
+                <li>JUMP ROPE</li>
+                <li>SQUATS</li>
+                <li>DEADLIFT</li>
+                <li>PLANK</li>
+                <li> PULL-UPS</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="about">
+        <div>
+            <div class="about-logo">
+                <img src="images/gym/about-logo.png" alt="">
+            </div>
+            <div>
+                <p>
+                    Hi, I'm Vanessa — a certified personal trainer helping
+                    busy people build strong, sustainable fitness habits.
+                    I don't just create workout plans — I guide you. push you,
+                    and keep you consistent. Whether you're starting from
+                    scratch or getting back on track, I'm here to make fitness
+                    fit your life.<span> Let's level up— together. My goal isn't
+                        just to give you workouts — it;s to guide you, hold you
+                        accountable, and keep you consistent.</span>
+                </p>
+            </div>
+            <div class="about-click">
+                <div>
+                    <buttonn class="more">MORE ABOUT ME</button>
+                </div>
+                <div>
+                    <button class="arrow">↗</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>
+                    "I'm your coach, motivator, and
+                    accountability partner — every step of
+                    the way."
+                </p>
+            </div>
+            <div class="about-pic">
+                <img src="images/unsplash/dom-hill-nimElTcTNyY-unsplash.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <section id="program">
+        <div class="program-logo"> <img src="images/gym/program-logo.png" alt=""></div>
+        <div class="program-cards">
+            <div>
+                <div class="card">
+                    <img src="images/gym/prograf.png" alt="">
+                    <h2>Burn Fat & Boost Energy</h2>
+                    <p>High-intensity workouts designed to help
+                        you loose weight, burn sturbborn fat and
+                        feel more energized
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="images/gym/prograh.png" alt="">
+                    <h2>Train Anytime, Anywhere at Home</h2>
+                    <p>No gym? No excuses, Get strong and stay
+                        active with guided home-based workouts
+                        using minimal or no equipment</p>
+                </div>
+            </div>
+            <div>
+                <div class="card">
+                    <img src="images/gym/prograw.png" alt="">
+                    <h2>Build Lean Muscle & Strength</h2>
+                    <p>Sculpt your body with focused strength
+                        training — perfect for building muscle
+                        without the bulk</p>
+                </div>
+                <div class="card">
+                    <img src="images/gym/progral.png" alt="">
+                    <h2>1-on-1 Personal Coaching</h2>
+                    <p>Work closely with me on a custom fitness
+                        plan built around your goals, body type,
+                        and schedule —— full support, real results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="plan">
+        <div><img src="images/gym/plan-logo.png" alt=""></div>
+        <div class="plan-card">
+            <div class="card">
+                <h1>Starter Plan</h1>
+                <p>Perfect for beginners who want <br>to build consistency</p>
+                <div>
+                    <ol>
+                        <li>2 Sessions/Week</li>
+                        <li>Personalized Workout Guide</li>
+                        <li>Basic Diet Tips</li>
+                        <li>WhatsApp Support</li>
+                    </ol>
+                </div>
+                <div class="card-btn1">
+                    <h2>Price: $49 / month</h2>
+                    <button>Get Started</button>
+                </div>
+            </div>
+            <div class="card">
+                <h1>Pro Plan</h1>
+                <p>For those serious about results</p>
+                <div>
+                    <ol>
+                        <li>4 Sessions / Week</li>
+                        <li>Customized Workout & Diet <br>Plan</li>
+                        <li>Progress Tracking</li>
+                        <li>Priority Support</li>
+                    </ol>
+                </div>
+                <div class="card-btn2">
+                    <h2>Price: $99 / month</h2>
+                    <button>Get Started</button>
+                </div>
+            </div>
+            <div class="card">
+                <h1>Elite Plan</h1>
+                <p>Elite for transformation & full commitment</p>
+                <div>
+                    <ol>
+                        <li>Unlimited Sessions</li>
+                        <li>Full Custom Training & <br> Nutrition Plan</li>
+                        <li>Weekly 1-on-1 Check-ins</li>
+                        <li>24/7 Support + Progress <br> Reports</li>
+                    </ol>
+                </div>
+                <div class="card-btn3">
+                    <h2>Price: $49 / month</h2>
+                    <button>Get Started</button>
+                </div>
+            </div>
+    </section>
+    <section id="testimonial">
+        <div><img class="testimonial-logo" src="images/gym/people-logo.png" alt=""></div>
+        <div class="message">
+            <div class="card">
+                <div class="card-top">
+                    <div id="profile"><img src="icons/Gemini_Generated_Image_ac0u87ac0u87ac0u-removebg-preview.png"
+                            alt=""></div>
+                    <div id="commas"><img src="images/gym/comma.png" alt=""></div>
+                </div>
+                <h2>Sophia George</h2>
+                <p>"I used to stuggle staying consistent, but the personalised plans kept me on track. I've built
+                    confidence, strength, and a healthier lifestyle. Highly recommended to anyone serious about the
+                    results"
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-top">
+                    <div id="profile"><img src="icons/Gemini_Generated_Image_ac0u87ac0u87ac0u-removebg-preview.png"
+                            alt="profile"></div>
+                    <div id="commas"><img src="images/gym/comma.png" alt=""></div>
+                </div>
+                <h2>John Miller</h2>
+                <p>"Training with Vannessa completely changed my fitness journey. I lost 10kg in just 3 months and feel
+                    stronger
+                    than ever. The workouts are challengong but always fun and motivating."</p>
+            </div>
+        </div>
+        <div class="arr">
+            <div>
+                <div class="left">←</div>
+            </div>
+            <div>
+                <div class="right">→</div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="contact-text">
+            <h2>Let's Transform Together</h2>
+            <p>Got a fitness goal, challenge or dream? Let's work side by side and make it a reality</p>
+        </div>
+        <div class="about-click">
+            <div>
+                <buttonn class="more">MORE ABOUT ME</button>
+            </div>
+            <div>
+                <button class="arrow">↗</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-up">
+            <h3>Let's Transform Together</h3>
+            <h1>fitwithVann@gmail.com</h1>
+        </div>
+        <hr>
+        <div class="bottom">
+            <div>
+                <a href="">About Me</a>
+                <a href="">Projects</a>
+                <a href="">Download CV</a>
+                <a href="">Services</a>
+                <a href="">Testimonial</a>
+                <a href="https://github.com/Nexora001">Made with 💚 by Nexora </a>
+            </div>
+            <div class="contact-icons">
+                <a href="#" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>

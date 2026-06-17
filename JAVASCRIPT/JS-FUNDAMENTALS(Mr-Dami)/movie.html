@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+            body{
+                width: 100vw;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* .container{
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px; */
+            /* } */
+
+            .search-bar{
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+               align-items: center;
+               align-items: calc(100vh - 20px);
+                gap: 50px;
+            }
+
+            #search{
+                width: 65%;
+                padding: 10px 20px;
+                border: 1px solid #02ffaf;
+            }   
+
+            .search-bar button {
+                width: 20%;
+                height: 2.5rem;
+                border: none;
+                background: #02ffaf;
+                color: #fff;
+                border-radius: 4px;
+                cursor: pointer;
+                box-shadow: none;
+                transition: 0.5 ease-in;
+
+            }
+
+            .search-bar button:hover {
+                box-shadow: 2px 4px 4px #555;
+            }
+
+        @keyframes spin {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Movie Database</h1>
+    <!-- <div class="conatiner"> -->
+        <form class="search-bar">
+            <input type="text" placeholder="Type a movie here" id="search">
+            <button type="submit">Search</button>
+        <!-- </div> -->
+         <div class="loader">
+            <img src="" alt="">
+         </div>
+    </div>
+</body>
+<script>
+    document.querySelector('.search-bar').addEventListener('submit', submitForm)
+
+async function submitForm(e) {
+    e.preventDefault()
+
+    document.querySelector('.loader').classList,toggle
+
+    const searchInput = document.querySelector('#search-bar')
+    const movies = await fetch(`https://www.omdbapi.com/?s=${searchInput.value}&apikey=thedb`)
+    displayMovies
+    
+}
+</script>
+</html>

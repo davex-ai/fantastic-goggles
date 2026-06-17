@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //     let e = 3
+        //     let E = 4
+        // console.log(e + E)
+        //     let me = {
+        //       id: 2,
+        //     name: 'myra'
+        //}
+        // function muo() {
+        //   var mu = 'joulo'
+        // console.log(mu)
+        // } muo()
+        // console.log(me)
+        // console.log(typeof (me))
+
+        //     declare variable
+        //     // assign  values 
+        // calculations/operations
+        // display result 
+        // // handle error  
+
+        //        const num1 = 21
+        //      const num2 = 22
+        //    if (num1 > num2) {
+        //      console('hia')
+        //} else {
+        //            console.log('nooooo!')
+        //      }
+
+        //   guess = prompt('Guess a number😁')
+        // if (guess > 3) {
+        //   document.write('warmer👀')
+        // } else if (guess == 3) {
+        //   document.write('lucky🥳')
+        // } else {
+        //   document.write('coldd!😥')
+        //        }
+
+        //      dial = prompt("Enter your code")
+        //    if (dial == "*3120") {
+        //   opt = prompt("Welcome!!!. Choose one of the following options\n 1.Buy Data\n 2. Buy Airtime\n Enter 1 or 2") 
+        //          if (opt == 1) {
+        //            alert('You want to buy data')
+        //        data = prompt("To buy data\n 1. 200 for 1GB\n 2. 300 for 2GB")
+        //      if(data == 1){
+        //        alert("You have just purchased 1GB")
+        //  }else if ( data == 2 ){
+        //    alert("You have just purchased 2GB")
+        // }else{
+        //   alert("Invalid input")
+        // }
+        // }
+        //else if (opt == 2) {
+        //      alert("You wanna get airtime")
+        //   } else {
+        //         alert("Incorrect input")
+        //         }
+        //   }
+        //  while (true) {
+        //   const values = 0
+        // while (values < 10) {
+        //  document.write(values)
+        // a = +1
+        //      }
+        //     }
+        //         while (true) {
+        //          age = +(prompt("Enter your name"))
+        //       if (age < 18) {
+        //        document.write("Go Home")
+        // }
+        // else {
+        //                 document.write("Welcome")
+        //           }
+        //    }
+        // var opt = 2
+        //while (true) {
+        //  username = prompt("Enter your Username")
+        //pwd = +(prompt("Enter your password"))
+        //           if (username == "niit" && pwd == 123) {
+        //             alert("Login successfully")
+        //           break
+        ///     }
+        //  else {
+
+        //    alert("Incorrect username & name")
+        //  if (opt == 2) {
+        //    alert("You have 2 more trials")
+        //         } else if (opt == 1) {
+        //           alert("You have 1 more trial")
+        //     } else {
+        //       alert("No more trial")
+
+        //     break
+        //       }
+        //     opt = opt - 1
+        // }
+        //  }
+
+        //       var chance = 2
+        ///     while (true) {
+        //      guess = prompt("Welcome to the guessing game!🥳\n Guess a number from 1 to 10")
+        //    if (guess <= 8 && guess >=5) { 
+        //      alert("You won!")
+        //break
+        //            }else if (chance == 2) {
+        //              alert("You have 2 more chances\n Try again")
+        //        } else if (chance == 1) {
+        //          alert("You have 1 more chance\n Hint: I can be 3 more than 1 but 3 less than 10")
+        //    } else {
+        //      alert("No more trials")
+        //    break
+        //            }
+        //          chance = chance - 1
+        //    }
+
+        // const item = 3
+        // for (var i = 0; i < item; i++) {
+        //     user = prompt("What's Your Name")
+        //     alert("Hi, " + user)
+        // }
+
+        //        currency = ["Dollar", "Pound", "Euro"]
+        //      currency.forEach(i =>{
+        //    alert(i)
+        //  });
+
+        //        sales = [20, 40, 60, 80]
+        //      total = 0
+        //    sales.forEach(e=>{ 
+        //      total = total + e
+        //    document.write(total+ "<br/>")
+        // })
+
+        let total = 0
+        q1 = prompt("Which of this animals cannot walk backward \n a. Elephant\n b. Kangaroo\n c. Llama")
+        if (q1 === 'b' || q1 === "Kangaroo") {
+            total += 2
+        } else {
+             alert('Answer = Kangaroo\n Their long tails and powerful legs make it difficult to move in reverse')
+        }
+        q2 = prompt("In which country would you find the most anccient forest \n a. Indonesia\n b. Australia\n c. Madagascar")
+        if (q2 === 'b' || q2 === "Australia") {
+            total += 2
+        } else {
+             alert('Answer = Australia \n The Daintree located in Australia is estimated to be 180 million years old')
+        }
+        q3 = prompt("Which sport is known as the 'Sport of kings'  \n a. Polo \n b. Wrestling \n c. Tennis")
+        if (q3 === "a" || q3 === "Polo") {
+            total += 2
+        } else {
+             alert('Answer = Polo')
+        }
+        q4 = prompt("Before the  Discovery of pluto, Which Planet was thought to be the farthest from the Sun \n a. Uranus\n b. Jupiter\n c. Neptune")
+        if (q4 === "c" || q4 === "Neptune") {
+            total += 2
+        } else {
+             
+            alert("Answer = Neptune \n it was discovered in 1846, and Pluto wasn't found until 1930")
+        }
+        q5 = prompt("Which fruit is botanically a berry, despite its common classification \n a. Cucumber\n b. Banana\n  c. Apple")
+        if (q5 === 'b') {
+        } else {
+            alert('Answer = Banana \n A berry is defined as a fruit that develops from the ovary of a single flower that typically contains multile seeds')
+        }
+
+        switch (total) {
+            case 10:
+                document.write("Your score: " + total + "\n Flawless Victory 😁")
+                break
+            case 8:
+                document.write("Your score: " + total + "\n Almost There....👀")
+                break
+            case 6:
+                document.write("Your score: " + total + "\n Almost There....👀")
+                break
+            case 4:
+                document.write("Your score: " + total + "\n More Practice....💪")
+            default:
+                document.write("Try again")
+
+        }
+
+        //        if (total == 10) {
+        //      }
+        //    else if (total <= 8 && total >= 6) {
+        //  }
+        //else{
+        //  document.write("Your score: " + total + "\n More Practice....💪")
+        // } 
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="page.css">
+   <style>
+    *{
+         padding: 0;
+    }
+    .form-control{
+        display: block;
+        width: 80%;
+     }
+
+    .form-control input{
+        width: 100%;
+     }
+
+    #form-button{
+        width: 100%;
+        height: 2rem;
+        
+    }
+   </style>
+</head>
+<body style="width: 100vw; height: 100vh; background-color: #eee;">
+    <div class="form-title">
+        <h1>Registration Form</h1>
+    </div>
+     <form style="margin: auto;  width: 50%; background-color: #fefefe;" >
+        <div class="form-control">
+            <label for="">Full Name</label>
+            <input type="text" placeholder="Put your name here">
+        </div>
+        <div class="form-control">
+            <label for="">Email</label>
+            <input type="email" placeholder="Put your email here">
+        </div>
+        <div class="form-control">
+            <label for="">Password</label>
+            <input type="password">
+        </div>
+        <div class="form-control">
+            <label for="">Confirm Password</label>
+            <input type="password" >
+        </div>
+        <div class="form-control">
+            <button id="form-button" type="submit">Sign Up</button>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,75 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container{
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  margin: 20px auto;
+  box-shadow: 0 2px 5px rgba(0,0,0, 0.1);
+}
+.flag {
+  border: 5px solid skyblue;
+  /* Optional: make rotation smooth */
+  transform-origin: center;
+  display: inline-block; /* Ensures transform works properly on inline elements like img */
+}
+.flag:hover{
+  animation: rotateSequence 7s infinite;
+}
+
+@keyframes rotateSequence {
+  0% {
+    transform: rotate(0deg);
+  }
+  /* Clockwise for 2s → total duration so far: 2s */
+  28.57% { /* 2s / 7s ≈ 28.57% */
+    transform: rotate(360deg);
+  }
+  /* Anti-clockwise for 5s → from 360deg back to 0deg over next 5s */
+  100% {
+    transform: rotate(0deg);
+  }
+}
+ /*
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

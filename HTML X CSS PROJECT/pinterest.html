@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinterest</title>
+    <link rel="shortcut icon" href="images/pin.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Pin Sans';
+
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            background-color: white;
+            position: relative;
+            z-index: 3;
+        }
+
+        nav .img {
+            width: 100%;
+            height: 30px;
+            margin-right: 20px;
+
+        }
+
+        .logo {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .exp {
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-weight: 900;
+            font-size: 20px;
+            background-color: white;
+        }
+
+        .exp:hover {
+            border-radius: 20px;
+            background-color: whitesmoke;
+        }
+
+        .Log {
+
+            border-radius: 15px;
+            color: white;
+            padding: 13px;
+            border: none;
+            cursor: pointer;
+            font-weight: 830;
+            background-color: #E60023;
+
+        }
+
+        .Log:hover {
+            background-color: #cc0d29;
+        }
+
+        .Sign {
+            padding: 15px;
+            background-color: whitesmoke;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 830;
+            margin-left: 10px;
+            margin-right: 20px;
+        }
+
+        .Sign:hover {
+            background-color: rgb(223, 218, 218);
+        }
+
+        section {
+            height: 37.4em;
+        }
+
+        .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            column-count: 8;
+            column-gap: 12px;
+            z-index: 0;
+            overflow: hidden;
+            /* height: 100vh; */
+
+         }
+        
+        .bg img {
+            width: 100%;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            display: block;
+            break-inside: avoid; 
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .form {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            position: absolute;
+            width: 100%;
+             /* background: rgba(255, 255, 255, 0.014); /* optional blur/overlay */
+            /* backdrop-filter: blur(2px);  */
+
+        }
+
+        .form-cta {
+            width: 10em;
+            margin-left: 75px;
+            margin-top: -1.1em;
+            font-size: 3em;
+            color: white;
+
+        }
+
+        .form-head {
+            margin-bottom: 9.5em;
+            font-size: 20px;
+            margin-left: 6em;
+            color: rgb(31, 23, 23);
+
+        }
+
+        .form-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 30em;
+            margin-left: 15em;
+            margin-right: 6em;
+            background-color: white;
+            margin-top: -25px;
+            height: 45em;
+            border-radius: 0px 0px 20px 20px;
+        }
+
+        .form-body span {
+            margin-left: 20px;
+        }
+
+        .form-input {
+            margin-top: -10em;
+            width: 10em;
+            margin-left: -5em;
+        }
+
+        input {
+            margin: 5px 0 5px 0;
+            padding: 15px;
+            border-radius: 18px;
+            border-color: black;
+            border-width: 1px;
+            padding-right: 5em;
+        }
+
+        input::placeholder {
+            font-size: 15px;
+        }
+
+        input:focus {
+            border-color: #2e7ad0;
+            border-width: 3px;
+            outline: none;
+        }
+
+        .forgot a {
+            text-decoration: none;
+            margin-left: -80px;
+            color: #2e7ad0;
+        }
+
+        .form-body h4 {
+            /* margin-top: -20px; */
+            border-radius: 20px;
+            padding: 10px;
+            font-weight: 500;
+            font-size: 18px;
+            width: 21em;
+            background-color: #73d4e0;
+            position: relative;
+            z-index: 2;
+            /* above overlay & background */
+        }
+
+        .form-body h4 a {
+            font-weight: 900;
+            font-size: 18px;
+            text-decoration: none;
+            color: #000;
+
+        }
+
+        .form-log {
+            width: 16em;
+            height: 37px;
+            margin: 10px;
+            font-size: 15px;
+            padding: 6px 0 6px 0;
+            border-radius: 10px;
+            border: none;
+            color: white;
+            background-color: #E60023;
+        }
+
+        .clicks {
+            display: flex;
+            flex-direction: column;
+            color: rgb(71, 59, 59);
+            text-align: center;
+        }
+
+        .clicks a {
+            color: rgb(71, 59, 59);
+        }
+
+        .clicks button {
+            margin: 5px;
+            padding: 10px;
+            width: 19em;
+            margin-left: 30px;
+        }
+
+        .clicks p {
+            font-size: 12px;
+            margin: 5px;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img class="img" src="icons/images.png" alt="logo">
+            <div>
+                <button class="exp">Explore</button>
+            </div>
+        </div>
+        <div class="nav-content">
+            <a href="">About</a>
+            <a href="">Business</a>
+            <a href="">Create</a>
+            <a href="">News</a>
+            <div class="navcli">
+                <button class="Log">Log in</button>
+                <button class="Sign">Sign up</button>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div class="bg">
+            <img src="./images/unsplash/alex-munsell-auIbTAcSH6E-unsplash.jpg" alt="">
+            <img src="./images/unsplash/anh-nguyen-kcA-c3f_3FE-unsplash.jpg" alt="">
+            <img src="./images/unsplash/anna-pelzer-IGfIGP5ONV0-unsplash.jpg" alt="">
+            <img src="./images/unsplash/anna-tukhfatullina-food-photographer-stylist-Mzy-OjtCI70-unsplash.jpg" alt="">
+            <img src="./images/unsplash/brooke-lark-oaz0raysASk-unsplash.jpg" alt="">
+            <img src="./images/unsplash/casey-lee-awj7sRviVXo-unsplash.jpg" alt="">
+            <img src="./images/unsplash/chad-montano-eeqbbemH9-c-unsplash.jpg" alt="">
+            <img src="./images/unsplash/chad-montano-MqT0asuoIcU-unsplash.jpg" alt="">
+            <img src="./images/unsplash/ian-dooley-TLD6iCOlyb0-unsplash.jpg" alt="">
+            <img src="./images/unsplash/joseph-gonzalez-zcUgjyqEwe8-unsplash.jpg" alt="">
+            <img src="./images/unsplash/rachel-park-hrlvr2ZlUNk-unsplash.jpg" alt="">
+            <img src="./images/unsplash/casey-lee-awj7sRviVXo-unsplash.jpg" alt="">
+            <img src="./images/unsplash/alex-munsell-auIbTAcSH6E-unsplash.jpg" alt="">
+            <img src="./images/unsplash/alex-munsell-auIbTAcSH6E-unsplash.jpg" alt="">
+            <img src="./images/unsplash/chad-montano-eeqbbemH9-c-unsplash.jpg" alt="">
+            <img src="./images/unsplash/chad-montano-MqT0asuoIcU-unsplash.jpg" alt="">
+            <img src="./images/unsplash/brooke-lark-oaz0raysASk-unsplash.jpg" alt="">
+            <img src="./images/unsplash/casey-lee-awj7sRviVXo-unsplash.jpg" alt="">
+            <img src="./images/unsplash/ian-dooley-TLD6iCOlyb0-unsplash.jpg" alt="">
+            <img src="./images/unsplash/anh-nguyen-kcA-c3f_3FE-unsplash.jpg" alt="">
+            <img src="./images/unsplash/casey-lee-awj7sRviVXo-unsplash.jpg" alt="">
+            <img src="./images/unsplash/casey-lee-awj7sRviVXo-unsplash.jpg" alt="">
+            <img src="./images/unsplash/casey-lee-awj7sRviVXo-unsplash.jpg" alt="">
+            <!-- <img src="./images/unsplash/casey-lee-awj7sRviVXo-unsplash.jpg" alt="">
+            <img src="./images/unsplash/casey-lee-awj7sRviVXo-unsplash.jpg" alt=""> -->
+ 
+        </div>
+        <div class="overlay"></div>
+        <div class="form">
+            <div class="form-cta">
+                <h1> Log in to get your ideas</h1>
+            </div>
+            <div class="form-body">
+                <div>
+                    <h4>Facebook logins no longer available. Log in with an otion below or <a href="">tap to reover your
+                            account </a></h4>
+                    <img style="width: 60px; margin: 22px; margin-left: 10em;" src="images/pin.png" alt="">
+                    <div class="form-head">
+                        <h2>Welcome to <br><span>Pinterest</span> </h2>
+                    </div>
+                </div>
+                <div class="form-input">
+
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Email">
+                    </div>
+                    <div>
+                        <label for="email">Password</label>
+                        <input type="email" name="email" id="email" placeholder="Password">
+                    </div>
+                </div>
+                <div class="forgot"><a href="">Forgot your password?</a></div>
+                <button class="form-log">Log in</button>
+                <h3 style="font: size 5px;">OR</h3>
+                <div class="clicks">
+                    <button>Continue with Google</button>
+                    <button>Use QR Code</button>
+                    <p>By continuing, you agree to Pinterest's <a href="">Terms of <br /> Service</a> and acknowledge
+                        you've read our
+                        <a href="">Privacy <br> Policy. Notice at collection</a>
+                    </p>
+                    <p> <strong> Not on Pinterest yet? Sign up </strong> <br>
+                    <p style="margin-bottom: 20px;">Are you a business? <strong> Get Started here </strong> </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

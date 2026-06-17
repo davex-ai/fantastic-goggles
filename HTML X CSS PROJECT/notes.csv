@@ -1,0 +1,13 @@
+<br>  to divide into pararagraph
+<hr> horizontal line 
+<strong>  bold text
+<del> line across text
+li*4 for 4 lines of li tags
+ctrl arrow to skip to end of word       
+alt (left $ right)arrow to switch tab
+alt (up $ down)arrow to move line above nd below
+ ctrl + alt arrow to write on more than one line
+ctrl d to change matching words
+class can be repeated unlike ids(need to be unique)
+&nbsp; non breaking space
+&lt, &gt &copy &pound &gt 

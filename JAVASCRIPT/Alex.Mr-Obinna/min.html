@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var states = ["Abuja", "Paris", "Beijin", "Washington DC" , "Toronto"]
+        var country = Array("Nigeria", "France", "China","America", "Canada")
+        for (var i = 0; i <= country.length; i++){
+        for (var j = 0; j <= states.length; j++){
+            if(country[i] == "Nigeria" && states[i] =="Abuja"){
+                document.write(`${country[i]} - ${states[i]}`)
+                break
+            }
+            if(country[i] == "Paris" && states[i] =="France"){
+                document.write(`${country[i]} - ${states[i]}`)
+                break
+            }
+            if(country[i] == "Beijin" && states[i] =="China"){
+                document.write(`${country[i]} - ${states[i]}`)
+                break
+            }
+            if(country[i] == "Washington DC" && states[i] =="America"){
+                document.write(`${country[i]} - ${states[i]}`)
+                break
+            }
+            if(country[i] == "Toronto" && states[i] =="Canada"){
+                document.write(`${country[i]} - ${states[i]}`)
+                break
+            }
+         }
+        }
+
+ 
+        // for(var i = 1; i < 3; i++){
+        //     for(var j= 1; j < 3; j++){
+        //     document.write(i*j+"<br/>")
+        // }}
+    </script>
+</body>
+</html>

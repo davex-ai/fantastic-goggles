@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane fx:id="contentPane" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.project.hospitalmanagementsystem.controller.admin.Admin"
+            prefWidth="1400" prefHeight="800"
+            stylesheets="@../../css/admin-home.css">
+
+    <!-- Sidebar -->
+    <VBox fx:id="sidebar" spacing="20" alignment="TOP_CENTER"
+          AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+          prefWidth="250" styleClass="sidebar">
+
+        <Label  text="Admin Panel" styleClass="sidebar-title" />
+        <Button text="Dashboard" styleClass="sidebar-button" onAction="#goToDashboard" />
+        <Button text="Manage Doctors" styleClass="sidebar-button" onAction="#manageDoctors" />
+        <Button text="Manage Patients" styleClass="sidebar-button" onAction="#managePatients" />
+        <Button text="Appointments" styleClass="sidebar-button" onAction="#viewAppointments" />
+        <Button text="Departments" styleClass="sidebar-button" onAction="#viewDepartments" />
+        <Button text="Complaints" styleClass="sidebar-button" onAction="#viewComplaints" />
+        <Button text="Reports" styleClass="sidebar-button" onAction="#viewReports" />
+        <Button text="Settings" styleClass="sidebar-button" onAction="#openSettings" />
+        <Button text="Logout" styleClass="logout-button" onAction="#logout" />
+    </VBox>
+
+    <!-- Main Content -->
+    <VBox spacing="30"  AnchorPane.leftAnchor="250" AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+        <padding><Insets top="30"/> </padding>
+        <!-- Header -->
+        <HBox alignment="CENTER_RIGHT" spacing="20">
+            <Label fx:id="adminNameLabel" text="Welcome, Admin" styleClass="admin-welcome" />
+            <Button fx:id="notificationButton" text="🔔" styleClass="header-button" />
+        </HBox>
+
+        <!-- Dashboard Cards -->
+        <HBox spacing="40" alignment="CENTER">
+            <VBox alignment="CENTER" styleClass="card">
+                <Label text="Total Patients" styleClass="card-title" />
+                <Label fx:id="patientCountLabel" text="0" styleClass="card-value" />
+            </VBox>
+            <VBox alignment="CENTER" styleClass="card">
+                <Label text="Appointments Today" styleClass="card-title" />
+                <Label fx:id="appointmentCountLabel" text="0" styleClass="card-value" />
+            </VBox>
+            <VBox alignment="CENTER" styleClass="card">
+                <Label text="Available Doctors" styleClass="card-title" />
+                <Label fx:id="doctorCountLabel" text="0" styleClass="card-value" />
+            </VBox>
+        </HBox>
+
+        <!-- Quick Actions -->
+        <HBox spacing="30" alignment="CENTER">
+            <Button text="Add Doctor" styleClass="quick-action" onAction="#addDoctor" />
+            <Button text="Search Patients" styleClass="quick-action" onAction="#searchPatients" />
+            <Button text="Generate Report" styleClass="quick-action" onAction="#generateReport" />
+        </HBox>
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style='background-color: red;' id="title">Hello</h1>
+    <button onclick="changeText()">Change Text</button> 
+
+    <script>
+
+        function changeText() {
+            document.getElementById('title').innerText = 'wassup'
+        }
+        function multiple(a, b) {
+            return a * b
+        }
+        console.log(multiple(3, 9))
+
+    </script>
+
+    <input type="number" id="passenger" placeholder="Enter no of passenger">
+    <input type="number" id="amount" placeholder="Enter amount">
+    <button onclick="calculateFare()">check fare</button>
+    <p id="fareResult"></p>
+    <script>
+        // function calculateFare() {
+        //     let num = document.getElementById('passenger').value
+        //     let farePerPerson =  document.getElementById('amount').value
+        //     let total = num * farePerPerson
+        //     document.getElementById('fareResult').innerText = `Total fare🫰 = ${'$' + total}`
+
+        // }
+        function calculateFare() {
+            let num = document.getElementById('passenger').value
+             let total = num * getAmount()
+            document.getElementById('fareResult').innerText = `Total fare🫰 = ${'$' + total}`
+
+        }
+        function getAmount(){
+            let amount = document.getElementById('amount').value
+            return amount
+        }
+    </script>
+
+    <h2>Class Attendance</h2>
+    <input type="text" id="student-name" placeholder="Enter a Student Name">
+    <button onclick="addStudent()">Add Student</button>
+    <ul id="attendanceList"></ul>
+
+    <script>
+        function addStudent(){
+            let name = document.getElementById('student-name').value
+
+            if(name.trim() === "") return
+
+            let li =document.createElement('li')
+            li.innerText = name
+            document.getElementById('attendanceList').appendChild(li)
+            document.getElementById('student-name').value = ""
+        }
+    </script>
+</body>
+
+</html>
